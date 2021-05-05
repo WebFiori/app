@@ -1,6 +1,5 @@
 <?php
 
-use Exception;
 use webfiori\framework\cli\CLI;
 use webfiori\framework\router\Router;
 use webfiori\framework\session\SessionsManager;
@@ -71,7 +70,7 @@ class Index {
                 define('WF_CORE_PATH', $corePath);
                 require_once $corePath.$rootClass;
             } else {
-                throw new Exception('Unable to locate the class "WebFioriApp".');
+                throw new \Exception('Unable to locate the class "WebFioriApp".');
             }
         }
     }
