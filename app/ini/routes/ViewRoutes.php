@@ -49,7 +49,8 @@ class ViewRoutes {
             'case-sensitive' => false,
             'middleware' => [
                 'sample-middleware','sample-middleware-2'
-            ]
+            ],
+            'methods' => 'get'
         ]);
         Router::incSiteMapRoute();
     }
