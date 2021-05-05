@@ -24,6 +24,7 @@
  */
 namespace app\ini\routes;
 
+use webfiori\framework\router\Router;
 use webfiori\examples\views\ExamplePage;
 /**
  * A class that only has one method to initiate some of system routes.

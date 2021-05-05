@@ -26,6 +26,7 @@ namespace app\ini\routes;
 
 use webfiori\framework\Util;
 use webfiori\http\Response;
+use webfiori\framework\router\Router;
 /**
  * A class that only has one method to initiate some of system routes.
  * The class is meant to only initiate the routes which uses the method 
