@@ -5,6 +5,7 @@ namespace app;
 use webfiori\database\ConnectionInfo;
 use webfiori\framework\mail\SMTPAccount;
 use webfiori\http\Uri;
+use themes\newFiori\NewFiori;
 /**
  * Configuration class of the application
  *
@@ -475,8 +476,8 @@ class AppConfig {
         $this->baseUrl = Uri::getBaseURL();
         $this->titleSep = '|';
         $this->primaryLang = 'EN';
-        $this->baseThemeName = \webfiori\theme\WebFioriV108::class;
-        $this->adminThemeName = \webfiori\theme\WebFioriV108::class;
+        $this->baseThemeName = NewFiori::class;
+        $this->adminThemeName = NewFiori::class;
         $this->homePage = Uri::getBaseURL();
     }
     /**
