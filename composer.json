@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=5.6",
-        "webfiori/framework":"*",
+        "webfiori/framework":"*"
     },
     "keywords": [
         "framework",
