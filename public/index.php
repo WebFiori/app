@@ -1,5 +1,8 @@
 <?php
 
+namespace webfiori;
+
+use Exception;
 use webfiori\framework\cli\CLI;
 use webfiori\framework\router\Router;
 use webfiori\framework\session\SessionsManager;
@@ -54,24 +57,15 @@ class Index {
      */
     private function loadAppClass() {
         $DS = DIRECTORY_SEPARATOR;
-        //Framework is served via downloaded dist
-        $corePath = ROOT_DIR.$DS.'framework';
+        
+        $corePath = ROOT_DIR.$DS.'vendor'.$DS.'webfiori'.$DS.'framework'.$DS.'webfiori'.$DS.'framework';
         $rootClass = $DS.'WebFioriApp.php';
         
         if (file_exists($corePath.$rootClass)) {
             define('WF_CORE_PATH', $corePath);
             require_once $corePath.$rootClass;
         } else {
-            //Framework is served via composer dist
-            $corePath = ROOT_DIR.$DS.'vendor'.$DS.'webfiori'.$DS.'framework'.$DS.'src'.$DS.'framework';
-            $rootClass = $DS.'WebFioriApp.php';
-            
-            if (file_exists($corePath.$rootClass)) {
-                define('WF_CORE_PATH', $corePath);
-                require_once $corePath.$rootClass;
-            } else {
-                throw new \Exception('Unable to locate the class "WebFioriApp".');
-            }
+            throw new Exception('Unable to locate the class "WebFioriApp".');
         }
     }
     /**
