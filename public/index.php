@@ -1,6 +1,13 @@
 <?php
 
 namespace webfiori;
+/**
+ * The name of the directory at which the developer will have his own application 
+ * code.
+ * 
+ * @since 2.3.0
+ */
+define('APP_DIR_NAME', 'app');
 
 use Exception;
 use webfiori\framework\cli\CLI;
