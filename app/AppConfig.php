@@ -4,8 +4,8 @@ namespace app;
 
 use webfiori\database\ConnectionInfo;
 use webfiori\framework\mail\SMTPAccount;
+use webfiori\framework\Config;
 use webfiori\http\Uri;
-use themes\newFiori\NewFiori;
 /**
  * Configuration class of the application
  *
@@ -15,7 +15,7 @@ use themes\newFiori\NewFiori;
  *
  * @since 2.1.0
  */
-class AppConfig {
+class AppConfig implements Config {
     /**
      * The name of admin control pages Theme.
      * 
@@ -288,23 +288,12 @@ class AppConfig {
      * @since 1.0
      */
     public function getDefaultTitle($langCode) {
-        $langs = $this->getDefaultTitles();
+        $langs = $this->getTitles();
         $langCodeF = strtoupper(trim($langCode));
         
         if (isset($langs[$langCodeF])) {
             return $langs[$langCode];
         }
-    }
-    /**
-     * Returns an array that holds the default pages titles for different languages.
-     * 
-     * @return array The indices of the array will be languages codes such as
-     * 'AR' and the value at each index will be page title in that language.
-     * 
-     * @since 1.0
-     */
-    public function getDefaultTitles() {
-        return $this->defaultPageTitles;
     }
     /**
      * Returns the global description of the web site that will be
@@ -476,8 +465,8 @@ class AppConfig {
         $this->baseUrl = Uri::getBaseURL();
         $this->titleSep = '|';
         $this->primaryLang = 'EN';
-        $this->baseThemeName = NewFiori::class;
-        $this->adminThemeName = NewFiori::class;
+        $this->baseThemeName = \themes\newFiori\NewFiori::class;
+        $this->adminThemeName = \themes\newFiori\NewFiori::class;
         $this->homePage = Uri::getBaseURL();
     }
     /**

@@ -1,4 +1,5 @@
 <?php
+
 namespace app\ini;
 
 use webfiori\examples\SampleMiddleware;
