@@ -2,6 +2,8 @@
 
 namespace app\ini\routes;
 
+use webfiori\framework\router\Router;
+
 class OtherRoutes {
     /**
      * Initialize system routes.
