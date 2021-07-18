@@ -1,7 +1,8 @@
 <?php
 
-use webfiori\framework\cron\Cron;
 namespace app\ini;
+
+use webfiori\framework\cron\Cron;
 
 /**
  * A class that has one method to initialize cron jobs.
