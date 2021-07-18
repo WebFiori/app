@@ -64,8 +64,8 @@ class Index {
      */
     private function loadAppClass() {
         $DS = DIRECTORY_SEPARATOR;
-        
-        $corePath = ROOT_DIR.$DS.'vendor'.$DS.'webfiori'.$DS.'framework'.$DS.'webfiori'.$DS.'framework';
+        $frameworkPath = ROOT_DIR.$DS.'vendor'.$DS.'webfiori'.$DS.'framework';
+        $corePath = $frameworkPath.$DS.'webfiori'.$DS.'framework';
         $rootClass = $DS.'WebFioriApp.php';
         
         if (file_exists($corePath.$rootClass)) {
