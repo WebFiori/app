@@ -1,5 +1,5 @@
 <?php
-namespace app\apis;
+namespace app\apis\user;
 
 use app\database\MainDatabase;
 use webfiori\framework\User;
@@ -20,6 +20,7 @@ class AddUserService extends AbstractWebService {
     public function __construct() {
         parent::__construct('add-user');
         $this->addRequestMethod('POST');
+        $this->addRequestMethod('put');
         $this->addParameter([
             'name' => 'username',
             'type' => 'string',

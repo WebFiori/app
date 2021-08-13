@@ -22,14 +22,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace webfiori\examples\views;
+namespace app\pages;
 
-use themes\ibrahim\IbrahimTheme;
-use webfiori\framework\Page;
 use webfiori\framework\ui\WebPage;
 use themes\newFiori\NewFiori;
-use VuetifyTheme;
-use themes\webfiori108\WebFioriV108;
 
 class ExamplePage extends WebPage {
     public function __construct() {

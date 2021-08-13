@@ -48,10 +48,11 @@ class MainDatabase extends DB {
      * @param User $userObj An object that holds user information.
      */
     public function addUser(User $userObj) {
+        $salt = substr(hash('sha256', time()+random_int(0, 1000)), 0, 10);
         $this->table('users')->insert([
             'email' => $userObj->getEmail(),
             'username' => $userObj->getUserName(),
-            'password' => hash('sha256', $userObj->getPassword()),
+            'password' => $salt.'.'.hash('sha256', $salt.$userObj->getPassword()),
             'privileges' => Access::createPermissionsStr($userObj)
         ])->execute();
     }
@@ -140,15 +141,18 @@ class MainDatabase extends DB {
      * object of type 'User'. If not, the method will return null.
      */
     public function login($userNameOrEmail, $userPass, $sessionDuration = 5, $isRef = true) {
+        $passSalt = $this->getPasswordSalt($userNameOrEmail);
+        $hash = hash('sha256', $passSalt.$userPass);
+        
         $this->table('users')->select()
         ->where('email', '=', $userNameOrEmail)
-        ->andWhere('password', '=', hash('sha256', $userPass));
+        ->andWhere('password', '=', $hash);
         $result = $this->execute();
 
         if ($result == null || $result->getRowsCount() == 0) {
             $result = $this->table('users')->select()
             ->where('username', '=', $userNameOrEmail)
-            ->andWhere('password', '=', hash('sha256', $userPass))->execute();
+            ->andWhere('password', '=', $hash)->execute();
 
             if ($result == null || $result->getRowsCount() == 0) {
                 return null;
@@ -172,14 +176,40 @@ class MainDatabase extends DB {
         return $userObj;
     }
     /**
+     * Returns the salt which is used in hashing user password.
+     * 
+     * @param string $usernameOrEmail The username of the user or its email address.
+     * 
+     * @return string|null If such user was found, the method will return the salt 
+     * value as string. If not, the method will return null.
+     */
+    public function getPasswordSalt($usernameOrEmail) {
+        $result = $this->table('users')
+                ->select()
+                ->where('email', '=', $usernameOrEmail)
+                ->execute();
+        if ($result->getRowsCount() == 0) {
+            $result = $this->table('users')
+                ->select()
+                ->where('username', '=', $usernameOrEmail)
+                ->execute();
+            if ($result->getRowsCount() == 0) {
+                return;
+            }
+        }
+        $pass = $result->getRows()[0]['password'];
+        return explode('.', $pass)[0];
+    }
+    /**
      * Update the password of a user given its ID.
      * 
      * @param User $user An object that holds the ID of the user 
      * alongside the new password.
      */
     public function updatePassword(User $user) {
+        $salt = substr(hash('sha256', time()+random_int(0, 1000)), 0, 10);
         $this->table('users')->update([
-            'password' => hash('sha256', $user->getPassword()),
+            'password' => $salt.'.'.hash('sha256', $user->getPassword()),
         ])->where('user-id', '=', $user->getID())->execute();
     }
     /**

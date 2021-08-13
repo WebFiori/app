@@ -23,18 +23,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace webfiori\examples\webApis;
+namespace app\apis;
 
 use webfiori\framework\ExtendedWebServicesManager;
 
 /**
  * A sample manager which is used to mange services.
  */
-class ExampleAPI extends ExtendedWebServicesManager {
+class SampleServicesManager extends ExtendedWebServicesManager {
     public function __construct() {
         parent::__construct();
         $this->addService(new SampleService());
     }
 }
-
-return __NAMESPACE__;
