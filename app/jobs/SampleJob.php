@@ -1,5 +1,5 @@
 <?php
-namespace webfiori\jobs;
+namespace app\jobs;
 
 use webfiori\framework\cron\AbstractJob;
 use webfiori\framework\cron\CronEmail;
@@ -48,7 +48,3 @@ class SampleJob extends AbstractJob {
         $file->write(true, true);
     }
 }
-//Must return the namespace of the job if it has a namespace after creating it.
-//This makes the job to schedule automatically.
-//This step can be ignored if the job has no namespace.
-return __NAMESPACE__;

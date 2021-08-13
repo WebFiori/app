@@ -1,5 +1,5 @@
 <?php
-namespace app\apis;
+namespace app\apis\user;
 
 use webfiori\framework\ExtendedWebServicesManager;
 /**

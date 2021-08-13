@@ -3,7 +3,6 @@
 namespace app\ini\routes;
 
 use webfiori\framework\router\Router;
-use webfiori\examples\views\ExamplePage;
 /**
  * A class that only has one method to initiate some of system routes.
  * The class is meant to only initiate the routes which uses the method 
@@ -23,7 +22,7 @@ class ViewRoutes {
         ]);
         Router::view([
             'path' => '/example', 
-            'route-to' => ExamplePage::class,
+            'route-to' => \app\pages\ExamplePage::class,
             'case-sensitive' => false,
             'middleware' => [
                 'sample-middleware','sample-middleware-2'

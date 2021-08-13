@@ -34,5 +34,3 @@ class SampleMiddleware extends AbstractMiddleware {
         //Response::send();
     }
 }
-//Return namespace to auto-register the middleware
-return __NAMESPACE__;
