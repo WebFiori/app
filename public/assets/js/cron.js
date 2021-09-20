@@ -1,3 +1,78 @@
+var app = new Vue({
+    el:'#app',
+    vuetify: new Vuetify(),
+    data: {
+        password:'',
+        loading:false,
+        dialog:{
+            show:false,
+            message:''
+        }
+    },
+    computed:{
+        login_btn_disabled:function() {
+            var pass = this.password+'';
+            return pass.trim().length === 0;
+        }
+    },
+    methods:{
+        dialogClosed:function() {
+            this.dialog.show = false; 
+        },
+        showDialog(message) {
+            this.dialog.message = message;
+            this.dialog.show = true;
+        },
+        login:function() {
+            var vue = this;
+            new AJAXRequest({
+                method:'post',
+                url:'cron/apis/login',
+                beforeAjax:function() {
+                    vue.loading = true;
+                },
+                afterAjax:function() {
+                    if (this.status !== 200) {
+                        vue.loading = false;
+                    }
+                },
+                onSuccess:function() {
+                    if (this.jsonResponse) {
+                        window.location.href = 'cron/jobs';
+                    } else {
+                        vue.showDialog('Something went wrong. Try again.');
+                    }
+                },
+                onServerErr:function() {
+                    if (this.jsonResponse) {
+                        if (this.jsonResponse.message) {
+                            vue.showDialog(this.jsonResponse.message);
+                        } else {
+                            vue.showDialog(this.status+' - Server Error.');
+                        }
+                    } else {
+                        vue.showDialog(this.status+' - Server Error.');
+                    }
+                },
+                onClientErr:function() {
+                    if (this.jsonResponse) {
+                        if (this.jsonResponse.message) {
+                            vue.showDialog(this.jsonResponse.message);
+                        } else {
+                            vue.showDialog(this.status+' - Client Error.');
+                        }
+                    } else {
+                        vue.showDialog(this.status+' - Client Error.');
+                    }
+                },
+                onDisconnected:function() {
+                    vue.showDialog('Check your internet connection and try again.');
+                }
+            }).send();
+        }
+    }
+});
+
 /**
  * This function is used to enable or disable input controls in the page.
  * @param {Boolean} disable Pass true to disable input elements. False to 
