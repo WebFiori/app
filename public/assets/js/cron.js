@@ -3,8 +3,10 @@ var app = new Vue({
     vuetify: new Vuetify(),
     data: {
         password:'',
+        search:'',
         loading:false,
         jobs:[],
+        expanded:[],
         jobs_table_headers:[
             {value:'name', text:'Job Name'},
             {value:'expression', text:'CRON Expression'},
@@ -34,6 +36,61 @@ var app = new Vue({
     methods:{
         forceExec:function (job) {
             console.log(job);
+            var vue = this;
+            var params = {
+                'job-name':job.name
+            };
+            for(var x = 0 ; x < job.args.length ; x++) {
+                var argVal = job.args[x].value+'';
+                if (argVal.length !== 0) {
+                    params[job.args[x].name] = argVal;
+                }
+            }
+            new AJAXRequest({
+                method:'post',
+                url:'cron/apis/force-execution',
+                params:params,
+                beforeAjax:function() {
+                    vue.loading = true;
+                    job.executing = true;
+                },
+                afterAjax:function() {
+                    vue.loading = false;
+                    job.executing = false;
+                },
+                onSuccess:function() {
+                    if (this.jsonResponse) {
+                        vue.showDialog(this.jsonResponse.message);
+                    } else {
+                        vue.showDialog('Something went wrong. Try again.');
+                    }
+                },
+                onServerErr:function() {
+                    if (this.jsonResponse) {
+                        if (this.jsonResponse.message) {
+                            vue.showDialog(this.jsonResponse.message);
+                        } else {
+                            vue.showDialog(this.status+' - Server Error.');
+                        }
+                    } else {
+                        vue.showDialog(this.status+' - Server Error.');
+                    }
+                },
+                onClientErr:function() {
+                    if (this.jsonResponse) {
+                        if (this.jsonResponse.message) {
+                            vue.showDialog(this.jsonResponse.message);
+                        } else {
+                            vue.showDialog(this.status+' - Client Error.');
+                        }
+                    } else {
+                        vue.showDialog(this.status+' - Client Error.');
+                    }
+                },
+                onDisconnected:function() {
+                    vue.showDialog('Check your internet connection and try again.');
+                }
+            }).send();
         },
         loadTasks:function() {
             var vue = this;
