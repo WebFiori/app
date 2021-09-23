@@ -9,6 +9,7 @@ use webfiori\ui\HTMLNode;
 use webfiori\ui\Input;
 use webfiori\ui\Label;
 use webfiori\ui\PNode;
+use webfiori\theme\LangExt;
 
 class WebFioriTheme extends Theme {
     public function __construct() {
