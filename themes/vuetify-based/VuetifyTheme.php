@@ -6,6 +6,7 @@ use webfiori\json\Json;
 use webfiori\ui\Anchor;
 use webfiori\ui\HeadNode;
 use webfiori\ui\HTMLNode;
+use webfiori\theme\vutifyTheme\LangExt;
 
 /**
  * A basic theme which is based on Vuetify framework.
