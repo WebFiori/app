@@ -41,8 +41,8 @@ var app = new Vue({
                 'job-name':job.name
             };
             for(var x = 0 ; x < job.args.length ; x++) {
-                var argVal = job.args[x].value+'';
-                if (argVal.length !== 0) {
+                var argVal = job.args[x].value;
+                if (argVal !== undefined && argVal !== null && argVal.length !== 0) {
                     params[job.args[x].name] = argVal;
                 }
             }
