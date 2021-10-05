@@ -94,16 +94,16 @@
         },
         {
             "name": "webfiori/framework",
-            "version": "v2.3.3",
+            "version": "v2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/framework.git",
-                "reference": "4f99c0306c63a30803bae1bf055103f6f41bf6e1"
+                "reference": "3662b7d277d2cf49ad9ccd1e48e345e73fbc9f0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/4f99c0306c63a30803bae1bf055103f6f41bf6e1",
-                "reference": "4f99c0306c63a30803bae1bf055103f6f41bf6e1",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/3662b7d277d2cf49ad9ccd1e48e345e73fbc9f0b",
+                "reference": "3662b7d277d2cf49ad9ccd1e48e345e73fbc9f0b",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/framework/issues",
-                "source": "https://github.com/WebFiori/framework/tree/v2.3.3"
+                "source": "https://github.com/WebFiori/framework/tree/v2.3.4"
             },
             "funding": [
                 {
@@ -152,7 +152,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2021-10-02T23:34:37+00:00"
+            "time": "2021-10-05T15:55:09+00:00"
         },
         {
             "name": "webfiori/http",
