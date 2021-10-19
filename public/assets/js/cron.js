@@ -20,6 +20,10 @@ var app = new Vue({
         dialog:{
             show:false,
             message:''
+        },
+        output_dialog:{
+            show:false,
+            output:''
         }
     },
     computed:{
@@ -57,6 +61,7 @@ var app = new Vue({
                 afterAjax:function() {
                     vue.loading = false;
                     job.executing = false;
+                    vue.output_dialog.output = this.response;
                 },
                 onSuccess:function() {
                     if (this.jsonResponse) {
