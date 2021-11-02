@@ -266,7 +266,7 @@ class WebFioriTheme extends Theme {
         return $headTag;
     }
 
-    public function getHeadrNode() {
+    public function getHeaderNode() {
         $headerSec = HTMLNode::loadComponent($this->getDirecotry().'header.html', [
             'menu-labels' => Page::translation()->get('menus/main-menu'),
             'home_link' => WebFioriApp::getAppConfig()->getBaseURL(),

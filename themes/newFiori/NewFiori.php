@@ -171,7 +171,7 @@ class NewFiori extends Theme {
         return $head;
     }
 
-    public function getHeadrNode() {
+    public function getHeaderNode() {
         $page = $this->getPage();
         
         $vAppBar = new HTMLNode('v-app-bar', [

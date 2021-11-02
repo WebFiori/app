@@ -66,7 +66,7 @@ class TemplateTheme extends Theme {
         return $headTag;
     }
 
-    public function getHeadrNode() {
+    public function getHeaderNode() {
         $headerSec = new HTMLNode();
         $headerBody = new HTMLNode();
         $headerBody->addTextNode('Header Sec');
