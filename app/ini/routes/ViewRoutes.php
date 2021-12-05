@@ -16,11 +16,11 @@ class ViewRoutes {
      * @since 1.0
      */
     public static function create() {
-        Router::view([
+        Router::page([
             'path' => '/', 
             'route-to' => '/default.html'
         ]);
-        Router::view([
+        Router::page([
             'path' => '/example', 
             'route-to' => \app\pages\ExamplePage::class,
             'case-sensitive' => false,
