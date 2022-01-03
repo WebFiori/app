@@ -98,12 +98,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/framework.git",
-                "reference": "e31e1434db0cd3c7f0716fd64aafa8850962ce70"
+                "reference": "c6544672a0c22271ec44c49d0586e3b0b1306ce2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/e31e1434db0cd3c7f0716fd64aafa8850962ce70",
-                "reference": "e31e1434db0cd3c7f0716fd64aafa8850962ce70",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/c6544672a0c22271ec44c49d0586e3b0b1306ce2",
+                "reference": "c6544672a0c22271ec44c49d0586e3b0b1306ce2",
                 "shasum": ""
             },
             "require": {
@@ -152,7 +152,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2022-01-03T15:57:31+00:00"
+            "time": "2022-01-03T16:24:44+00:00"
         },
         {
             "name": "webfiori/http",
