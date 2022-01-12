@@ -123,6 +123,11 @@ var app = new Vue({
                 }
             }).send();
         },
+        checkIfEnterHit:function(e) {
+            if (e.keyCode === 13) {
+                this.login();
+            }
+        },
         loadTasks:function() {
             var vue = this;
             new AJAXRequest({
