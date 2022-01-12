@@ -23,7 +23,8 @@ var app = new Vue({
         },
         output_dialog:{
             show:false,
-            output:''
+            output:'',
+            failed:false
         }
     },
     computed:{
@@ -61,7 +62,32 @@ var app = new Vue({
                 afterAjax:function() {
                     vue.loading = false;
                     job.executing = false;
-                    vue.output_dialog.output = this.response;
+                    
+                    if (this.status === 200 && this.jsonResponse) {
+                        var output = '';
+                        var info = this.jsonResponse['more-info'];
+                        
+                        if (info === undefined) {
+                            info = this.jsonResponse['more_info'];
+                        }
+                        
+                        if (info === undefined) {
+                            info = this.jsonResponse['moreInfo'];
+                        }
+                        for (var x = 0 ; x < info.log.length ; x++) {
+                            output += info.log[x]+'<br/>';
+                        }
+                        vue.output_dialog.output = output;
+                        
+                        if (info.failed.indexOf(job.name) !== -1) {
+                            vue.output_dialog.failed = true;
+                        } else {
+                            vue.output_dialog.failed = false;
+                        }
+                    } else {
+                        vue.output_dialog.output = this.response;
+                        vue.output_dialog.failed = true;
+                    }
                 },
                 onSuccess:function() {
                     if (this.jsonResponse) {
@@ -96,6 +122,11 @@ var app = new Vue({
                     vue.showDialog('Check your internet connection and try again.');
                 }
             }).send();
+        },
+        checkIfEnterHit:function(e) {
+            if (e.keyCode === 13) {
+                this.login();
+            }
         },
         loadTasks:function() {
             var vue = this;
