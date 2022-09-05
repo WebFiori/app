@@ -8,6 +8,7 @@ var app = new Vue({
         jobs:[],
         expanded:[],
         jobs_table_headers:[
+            {value:'info', text:''},
             {value:'name', text:'Job Name'},
             {value:'expression', text:'CRON Expression'},
             {value:'time.is_minute', text:'Is Minute'},
