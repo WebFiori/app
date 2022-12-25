@@ -2,6 +2,7 @@
 namespace webfiori\examples;
 
 use webfiori\framework\middleware\AbstractMiddleware;
+use webfiori\http\Request;
 use webfiori\http\Response;
 /**
  * A sample middleware implementation.
@@ -19,16 +20,16 @@ class SampleMiddleware extends AbstractMiddleware {
         //Add the middleware to the global middleware group
         $this->addToGroup('global');
     }
-    public function after() {
+    public function after(Request $request, Response $response) {
         // A routine to execute after sending the response and before terminating 
         // The application.
     }
 
-    public function afterSend() {
+    public function afterSend(Request $request, Response $response) {
         // A routine to execute after terminating The application
     }
 
-    public function before() {
+    public function before(Request $request, Response $response) {
         // A routine to execute before entering the application
         //Response::write('Terminate before reach app.');
         //Response::send();
