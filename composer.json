@@ -8,8 +8,8 @@
         }
     ],
     "require": {
-        "php": ">=5.6",
-        "webfiori/framework":"*"
+        "php": ">=7.0",
+        "webfiori/framework":"v3.0.0-RC1"
     },
     "keywords": [
         "framework",
