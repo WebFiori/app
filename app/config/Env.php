@@ -1,21 +1,22 @@
 <?php
 
-namespace app\ini;
+namespace app\config;
+
 /**
-* A class which is used to initialize global constants.
-* 
-* This class has one static method which is used to define the constants.
-* The class can be used to initialize any constant that the application depends
-* on. The constants that this class will initialize are the constants which
-* uses the function <code>define()</code>.
-* Also, the developer can modify existing ones as needed to change some of the
-* default settings of the framework.
-* 
-* @since 1.1.0
-*/
-class GlobalConstants {
+ * A class which is used to initialize environment variables as global constants.
+ * 
+ * This class has one static method which is used to define environment variables.
+ * The class can be used to initialize any constant that the application depends
+ * on. The constants that this class will initialize are the constants which
+ * uses the function <code>define()</code>.
+ * Also, the developer can modify existing ones as needed to change some of the
+ * default settings of application environment.
+ * 
+ * @since 1.1.0
+ */
+class Env {
     /**
-     * Initialize the constants.
+     * Initialize environment variables.
      * 
      * Include your own in the body of this method or modify existing ones
      * to suite your configuration. It is recommended to check if the global
@@ -24,14 +25,14 @@ class GlobalConstants {
      * 
      * @since 1.0
      */
-    public static function defineConstants() {
+    public static function defineEnvVars() {
         if (!defined('SCRIPT_MEMORY_LIMIT')){
             /**
              * Memory limit per script.
              * 
-             * This constant represents the maximum amount of memory each script will 
-             * consume before showing a fatal error. Default value is 2GB. The 
-             * developer can change this value as needed.
+             * This constant represents the maximum amount of memory each script will
+             * consume before showing a fatal error. 
+             * Default value is 2GB. The* developer can change this value as needed.
              * 
              * @var string
              * 
@@ -155,25 +156,6 @@ class GlobalConstants {
              */
             define('NO_WWW', false);
         }
-        if (!defined('MAX_BOX_MESSAGES')){
-            /**
-             * The maximum number of message boxes to show in one page.
-             * 
-             * A message box is a box which will be shown in a web page that 
-             * contains some information. The 
-             * box can be created manually by using the method 'Util::print_r()' or 
-             * it can be as a result of an error during execution.
-             * Default value is 15. The developer can change the value as needed. Note 
-             * that if the constant is not defined, the number of boxes will 
-             * be almost unlimited.
-             * 
-             * @var int
-             * 
-             * @since 1.0
-             * 
-             */
-            define('MAX_BOX_MESSAGES', 15);
-        }
         if (!defined('CLI_HTTP_HOST')){
             /**
              * Host name to use in case the system is executed through CLI.
@@ -204,19 +186,6 @@ class GlobalConstants {
              */
             define('DS', DIRECTORY_SEPARATOR);
         }
-        if (!defined('THEMES_PATH')){
-            $themesDirName = 'themes';
-            $themesPath = substr(__DIR__, 0, strlen(__DIR__) - strlen(APP_DIR_NAME.'/ini')).DIRECTORY_SEPARATOR.$themesDirName;
-            /**
-             * This constant represents the directory at which themes exist.
-             * 
-             * @var string
-             * 
-             * @since 1.0
-             * 
-             */
-            define('THEMES_PATH', $themesPath);
-        }
         if (!defined('USE_HTTP')){
             /**
              * Sets the framework to use 'http://' or 'https://' for base URIs.
@@ -232,6 +201,19 @@ class GlobalConstants {
              * 
              */
             define('USE_HTTP', false);
+        }
+        if (!defined('THEMES_PATH')){
+            $themesDirName = 'themes';
+            $themesPath = substr(__DIR__, 0, strlen(__DIR__) - strlen(APP_DIR_NAME.'/config')).$themesDirName;
+            /**
+             * This constant represents the directory at which themes exist.
+             * 
+             * @var string
+             * 
+             * @since 1.0
+             * 
+             */
+            define('THEMES_PATH', $themesPath);
         }
     }
 }
