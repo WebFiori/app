@@ -1,6 +1,13 @@
 <?php
 
 namespace webfiori;
+
+use Exception;
+use webfiori\framework\router\Router;
+use webfiori\framework\session\SessionsManager;
+use webfiori\framework\WebFioriApp;
+use webfiori\http\Request;
+use webfiori\http\Response;
 /**
  * The name of the directory at which the developer will have his own application 
  * code.
@@ -9,13 +16,7 @@ namespace webfiori;
  */
 define('APP_DIR_NAME', 'app');
 
-use Exception;
-use webfiori\framework\cli\CLI;
-use webfiori\framework\router\Router;
-use webfiori\framework\session\SessionsManager;
-use webfiori\framework\WebFioriApp;
-use webfiori\http\Request;
-use webfiori\http\Response;
+
 /**
  * The entry point of all requests.
  *
@@ -47,13 +48,12 @@ class Index {
          */
         WebFioriApp::start();
 
-        if (CLI::isCLI() === true) {
-            CLI::registerCommands();
-            CLI::runCLI();
+        if (WebFioriApp::getRunner()->isCLI() === true) {
+            WebFioriApp::getRunner()->start();
         } else {
             //route user request.
             SessionsManager::start('wf-session');
-            Router::route(Request::getRequestedURL());
+            Router::route(Request::getRequestedURI());
             Response::send();
         }
     }
