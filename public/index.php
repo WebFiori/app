@@ -7,7 +7,7 @@ namespace webfiori;
  * 
  * @since 2.3.0
  */
-define('APP_DIR_NAME', 'app');
+define('APP_DIR', 'app');
 
 use Exception;
 use webfiori\framework\cli\CLI;
@@ -28,15 +28,15 @@ class Index {
         /**
          * The root directory that is used to load all other required system files.
          */
-        if (!defined('ROOT_DIR')) {
+        if (!defined('ROOT_PATH')) {
             $publicFolder = $DS.'public';
 
             if (substr(__DIR__, strlen(__DIR__) - strlen($publicFolder)) == $publicFolder) {
                 //HTTP run
-                define('ROOT_DIR', substr(__DIR__,0, strlen(__DIR__) - strlen($DS.'public')));
+                define('ROOT_PATH', substr(__DIR__,0, strlen(__DIR__) - strlen($DS.'public')));
             } else {
                 //CLI run
-                define('ROOT_DIR', __DIR__);
+                define('ROOT_PATH', __DIR__);
             }
         }
         $this->loadAppClass();
@@ -64,7 +64,7 @@ class Index {
      */
     private function loadAppClass() {
         $DS = DIRECTORY_SEPARATOR;
-        $frameworkPath = ROOT_DIR.$DS.'vendor'.$DS.'webfiori'.$DS.'framework';
+        $frameworkPath = ROOT_PATH.$DS.'vendor'.$DS.'webfiori'.$DS.'framework';
         $corePath = $frameworkPath.$DS.'webfiori'.$DS.'framework';
         $rootClass = $DS.'WebFioriApp.php';
         
