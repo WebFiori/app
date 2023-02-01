@@ -233,21 +233,5 @@ class GlobalConstants {
              */
             define('USE_HTTP', false);
         }
-<<<<<<< Updated upstream:app/ini/GlobalConstants.php
-=======
-        if (!defined('THEMES_PATH')){
-            $themesDirName = 'themes';
-            $themesPath = substr(__DIR__, 0, strlen(__DIR__) - strlen(APP_DIR.'/config')).$themesDirName;
-            /**
-             * This constant represents the directory at which themes exist.
-             * 
-             * @var string
-             * 
-             * @since 1.0
-             * 
-             */
-            define('THEMES_PATH', $themesPath);
-        }
->>>>>>> Stashed changes:app/config/Env.php
     }
 }
