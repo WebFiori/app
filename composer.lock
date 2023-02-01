@@ -4,9 +4,75 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< Updated upstream
     "content-hash": "311d55202136cedb984277e89d7b3dd8",
     "packages": [
         {
+=======
+    "content-hash": "309ff2d20af5766b2a8b2fb8af84755c",
+    "packages": [
+        {
+            "name": "webfiori/cli",
+            "version": "v1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WebFiori/cli.git",
+                "reference": "32ff3029ed0046f16377ef60207441b118b53db0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WebFiori/cli/zipball/32ff3029ed0046f16377ef60207441b118b53db0",
+                "reference": "32ff3029ed0046f16377ef60207441b118b53db0",
+                "shasum": ""
+            },
+            "require": {
+                "webfiori/file": "1.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "webfiori\\cli\\": "webfiori\\cli"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ibrahim",
+                    "email": "ibrahim@webfiori.com"
+                }
+            ],
+            "description": "Command line component of WebFiori framework",
+            "keywords": [
+                "cli",
+                "command line",
+                "php",
+                "terminal"
+            ],
+            "support": {
+                "issues": "https://github.com/WebFiori/cli/issues",
+                "source": "https://github.com/WebFiori/cli/tree/v1.0.10"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/IbrahimBinAlshikh",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.buymeacoffee.com/ibrahimdev",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/ibrahimdev",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2023-02-01T20:51:35+00:00"
+        },
+        {
+>>>>>>> Stashed changes
             "name": "webfiori/collections",
             "version": "v1.0.3",
             "source": {
@@ -94,6 +160,7 @@
         },
         {
             "name": "webfiori/framework",
+<<<<<<< Updated upstream
             "version": "v2.4.6",
             "source": {
                 "type": "git",
@@ -113,6 +180,34 @@
                 "webfiori/http": "3.1.1",
                 "webfiori/jsonx": "3.0.0",
                 "webfiori/ui": "2.2.3"
+=======
+            "version": "v3.0.0-RC3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WebFiori/framework.git",
+                "reference": "3b4a3b0c01cbd95bd0da08cf150a802aea6ddccc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/3b4a3b0c01cbd95bd0da08cf150a802aea6ddccc",
+                "reference": "3b4a3b0c01cbd95bd0da08cf150a802aea6ddccc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "webfiori/cli": "v1.0.10",
+                "webfiori/collections": "v1.1.1",
+                "webfiori/database": "v0.5.4",
+                "webfiori/err": "v1.0.5",
+                "webfiori/file": "v1.2.2",
+                "webfiori/http": "v3.2.20 ",
+                "webfiori/jsonx": "v3.1.5",
+                "webfiori/mailer": "v1.0.2",
+                "webfiori/ui": "v2.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+>>>>>>> Stashed changes
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -152,6 +247,7 @@
                     "type": "ko_fi"
                 }
             ],
+<<<<<<< Updated upstream
             "time": "2022-01-17T19:35:59+00:00"
         },
         {
@@ -166,6 +262,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/WebFiori/http/zipball/1cee0781ac7c3bfdee1f8385977630dca576dd87",
                 "reference": "1cee0781ac7c3bfdee1f8385977630dca576dd87",
+=======
+            "time": "2023-02-01T22:41:14+00:00"
+        },
+        {
+            "name": "webfiori/http",
+            "version": "v3.2.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WebFiori/http.git",
+                "reference": "9e9abaf7cb3e2b6f92b01544fb128d6275c7b329"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WebFiori/http/zipball/9e9abaf7cb3e2b6f92b01544fb128d6275c7b329",
+                "reference": "9e9abaf7cb3e2b6f92b01544fb128d6275c7b329",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -192,7 +304,11 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/http/issues",
+<<<<<<< Updated upstream
                 "source": "https://github.com/WebFiori/http/tree/v3.1.1"
+=======
+                "source": "https://github.com/WebFiori/http/tree/v3.2.20"
+>>>>>>> Stashed changes
             },
             "funding": [
                 {
@@ -200,7 +316,11 @@
                     "type": "custom"
                 }
             ],
+<<<<<<< Updated upstream
             "time": "2021-10-25T12:42:25+00:00"
+=======
+            "time": "2023-01-31T22:18:40+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "webfiori/jsonx",
