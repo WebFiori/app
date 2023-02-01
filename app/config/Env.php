@@ -204,7 +204,7 @@ class Env {
         }
         if (!defined('THEMES_PATH')){
             $themesDirName = 'themes';
-            $themesPath = substr(__DIR__, 0, strlen(__DIR__) - strlen(APP_DIR_NAME.'/config')).$themesDirName;
+            $themesPath = substr(__DIR__, 0, strlen(__DIR__) - strlen(APP_DIR.'/config')).$themesDirName;
             /**
              * This constant represents the directory at which themes exist.
              * 
