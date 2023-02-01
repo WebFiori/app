@@ -4,71 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< Updated upstream
-    "content-hash": "311d55202136cedb984277e89d7b3dd8",
-    "packages": [
-        {
-            "name": "webfiori/cli",
-            "version": "v1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WebFiori/cli.git",
-                "reference": "ad7dc482f3d77748c2c04c46f95625bda9fb8e78"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/cli/zipball/ad7dc482f3d77748c2c04c46f95625bda9fb8e78",
-                "reference": "ad7dc482f3d77748c2c04c46f95625bda9fb8e78",
-                "shasum": ""
-            },
-            "require": {
-                "webfiori/file": "1.2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webfiori\\cli\\": "webfiori\\cli"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ibrahim",
-                    "email": "ibrahim@webfiori.com"
-                }
-            ],
-            "description": "Command line component of WebFiori framework",
-            "keywords": [
-                "cli",
-                "command line",
-                "php",
-                "terminal"
-            ],
-            "support": {
-                "issues": "https://github.com/WebFiori/cli/issues",
-                "source": "https://github.com/WebFiori/cli/tree/v1.0.8"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/IbrahimBinAlshikh",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.buymeacoffee.com/ibrahimdev",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://ko-fi.com/ibrahimdev",
-                    "type": "ko_fi"
-                }
-            ],
-            "time": "2022-09-11T13:35:50+00:00"
-        },
-        {
-=======
     "content-hash": "309ff2d20af5766b2a8b2fb8af84755c",
     "packages": [
         {
@@ -132,7 +67,6 @@
             "time": "2023-02-01T20:51:35+00:00"
         },
         {
->>>>>>> Stashed changes
             "name": "webfiori/collections",
             "version": "v1.1.1",
             "source": {
@@ -368,27 +302,6 @@
         },
         {
             "name": "webfiori/framework",
-<<<<<<< Updated upstream
-            "version": "v2.4.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WebFiori/framework.git",
-                "reference": "b803394f4afb5f6088da878550462ae79e577869"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/b803394f4afb5f6088da878550462ae79e577869",
-                "reference": "b803394f4afb5f6088da878550462ae79e577869",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6",
-                "webfiori/collections": "1.0.3",
-                "webfiori/database": "0.3.8",
-                "webfiori/http": "3.1.1",
-                "webfiori/jsonx": "3.0.0",
-                "webfiori/ui": "2.2.3"
-=======
             "version": "v3.0.0-RC3",
             "source": {
                 "type": "git",
@@ -415,7 +328,6 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "*"
->>>>>>> Stashed changes
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -439,8 +351,8 @@
                 "webfiori"
             ],
             "support": {
-                "issues": "https://github.com/WebFiori/framework/issues",
-                "source": "https://github.com/WebFiori/framework/tree/v2.4.6"
+                "issues": "https://github.com/webfiori/framework/issues",
+                "source": "https://github.com/webfior/framework"
             },
             "funding": [
                 {
@@ -456,20 +368,20 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2022-01-03T16:24:44+00:00"
+            "time": "2023-02-01T22:41:14+00:00"
         },
         {
             "name": "webfiori/http",
-            "version": "v3.2.18",
+            "version": "v3.2.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/http.git",
-                "reference": "af2803ca5354090dec86611d11fc2a94d58aa29d"
+                "reference": "9e9abaf7cb3e2b6f92b01544fb128d6275c7b329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/http/zipball/1cee0781ac7c3bfdee1f8385977630dca576dd87",
-                "reference": "1cee0781ac7c3bfdee1f8385977630dca576dd87",
+                "url": "https://api.github.com/repos/WebFiori/http/zipball/9e9abaf7cb3e2b6f92b01544fb128d6275c7b329",
+                "reference": "9e9abaf7cb3e2b6f92b01544fb128d6275c7b329",
                 "shasum": ""
             },
             "require": {
@@ -499,7 +411,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/http/issues",
-                "source": "https://github.com/WebFiori/http/tree/v3.1.1"
+                "source": "https://github.com/WebFiori/http/tree/v3.2.20"
             },
             "funding": [
                 {
@@ -507,7 +419,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-10-25T12:42:25+00:00"
+            "time": "2023-01-31T22:18:40+00:00"
         },
         {
             "name": "webfiori/jsonx",
