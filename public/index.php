@@ -5,7 +5,7 @@ namespace webfiori;
 use Exception;
 use webfiori\framework\router\Router;
 use webfiori\framework\session\SessionsManager;
-use webfiori\framework\WebFioriApp;
+use webfiori\framework\App;
 use webfiori\http\Request;
 use webfiori\http\Response;
 /**
@@ -46,10 +46,10 @@ class Index {
          * 
          * Planting application seed into the ground and make your work bloom.
          */
-        WebFioriApp::start();
+        App::start();
 
-        if (WebFioriApp::getRunner()->isCLI() === true) {
-            WebFioriApp::getRunner()->start();
+        if (App::getRunner()->isCLI() === true) {
+            App::getRunner()->start();
         } else {
             //route user request.
             SessionsManager::start('wf-session');
@@ -58,7 +58,7 @@ class Index {
         }
     }
     /**
-     * Try to load the class 'WebFioriApp'.
+     * Try to load the class 'App'.
      * 
      * @throws Exception
      */
@@ -66,13 +66,13 @@ class Index {
         $DS = DIRECTORY_SEPARATOR;
         $frameworkPath = ROOT_PATH.$DS.'vendor'.$DS.'webfiori'.$DS.'framework';
         $corePath = $frameworkPath.$DS.'webfiori'.$DS.'framework';
-        $rootClass = $DS.'WebFioriApp.php';
+        $rootClass = $DS.'App.php';
         
         if (file_exists($corePath.$rootClass)) {
             define('WF_CORE_PATH', $corePath);
             require_once $corePath.$rootClass;
         } else {
-            throw new Exception('Unable to locate the class "WebFioriApp".');
+            throw new Exception('Unable to locate the class "App".');
         }
     }
     /**
