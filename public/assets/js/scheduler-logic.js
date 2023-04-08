@@ -105,12 +105,12 @@ ajax.setOnClientError({
     callback:function() {
         if (this.jsonResponse) {
             if (this.jsonResponse.message) {
-                vue.showDialog(this.jsonResponse.message);
+                this.props.vue.showDialog(this.jsonResponse.message);
             } else {
-                vue.showDialog(this.status+' - Client Error.');
+                this.props.vue.showDialog(this.status+' - Client Error.');
             }
         } else {
-            vue.showDialog(this.status+' - Client Error.');
+            this.props.vue.showDialog(this.status+' - Client Error.');
         }
     }
 });
@@ -151,6 +151,10 @@ var app = new Vue({
         }
     },
     mounted:function () {
+        ajax.bind({
+            vue:this
+        });
+        ajax.setBase(data.base);
         if (data.title === 'Scheduled Tasks') {
             this.loadTasks();
         }
@@ -202,7 +206,4 @@ var app = new Vue({
             ajax.send();
         }  
     }
-});
-ajax.bind({
-    vue:app
 });
