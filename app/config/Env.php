@@ -67,7 +67,7 @@ class Env {
              * The value of this constant is passed to the function 'date_default_timezone_set()'. 
              * This one is used to fix some date and time related issues when the 
              * application is deployed in multiple servers.
-             * See http://php.net/manual/en/timezones.php for supported time zones.
+             * See https://php.net/manual/en/timezones.php for supported time zones.
              * Change this as needed.
              * 
              * @var string
@@ -103,20 +103,20 @@ class Env {
              */
             define('LOAD_COMPOSER_PACKAGES', true);
         }
-        if (!defined('CRON_THROUGH_HTTP')){
+        if (!defined('SCHEDULER_THROUGH_HTTP')){
             /**
-             * A constant which is used to enable or disable HTTP access to cron.
+             * A constant which is used to enable or disable HTTP access to background tasks control panel.
              * 
              * If the constant value is set to true, the framework will add routes to the 
-             * components which is used to allow access to cron control panel. The control 
-             * panel is used to execute jobs and check execution status. Default value is false.
+             * components which is used to allow access to tasks control panel. The control 
+             * panel is used to execute tasks and check execution status. Default value is false.
              * 
              * @var boolean
              * 
              * @since 1.0
              * 
              */
-            define('CRON_THROUGH_HTTP', false);
+            define('SCHEDULER_THROUGH_HTTP', false);
         }
         if (!defined('WF_VERBOSE')){
             /**
@@ -160,7 +160,7 @@ class Env {
             /**
              * Host name to use in case the system is executed through CLI.
              * 
-             * When the application is running throgh CLI, there is no actual 
+             * When the application is running through CLI, there is no actual 
              * host name. For this reason, the host is set to 127.0.0.1 by default. 
              * If this constant is defined, the host will be changed to the value of 
              * the constant. Default value of the constant is 'example.com'.

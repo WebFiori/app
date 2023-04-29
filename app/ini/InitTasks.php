@@ -2,9 +2,9 @@
 
 namespace app\ini;
 
-class InitCron {
+class InitTasks {
     /**
-     * A method that can be used to initialize cron jobs.
+     * A method that can be used to register background tasks.
      * 
      * @since 1.0
      */

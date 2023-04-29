@@ -47,7 +47,7 @@ class AppConfig implements Config {
      * 
      * @since 1.0
      */
-    private $appVestion;
+    private $appVersion;
     /**
      * The name of base website UI Theme.
      * 
@@ -57,7 +57,7 @@ class AppConfig implements Config {
      */
     private $baseThemeName;
     /**
-     * The base URL that is used by all web site pages to fetch resource files.
+     * The base URL that is used by all website pages to fetch resource files.
      * 
      * @var string
      * 
@@ -73,13 +73,13 @@ class AppConfig implements Config {
      */
     private $configVision;
     /**
-     * Password hash of CRON sub-system.
+     * Password hash of scheduler sub-system.
      * 
      * @var string
      * 
      * @since 1.0
      */
-    private $cronPass;
+    private $schedulerPass;
     /**
      * An associative array that will contain database connections.
      * 
@@ -129,7 +129,7 @@ class AppConfig implements Config {
      */
     private $primaryLang;
     /**
-     * The character which is used to saperate site name from page title.
+     * The character which is used to separate site name from page title.
      * 
      * @var string
      * 
@@ -155,7 +155,7 @@ class AppConfig implements Config {
         $this->initSiteInfo();
         $this->initDbConnections();
         $this->initSmtpConnections();
-        $this->cronPass = 'NO_PASSWORD';
+        $this->schedulerPass = 'NO_PASSWORD';
     }
     /**
      * Adds SMTP account.
@@ -217,7 +217,7 @@ class AppConfig implements Config {
     /**
      * Returns the name of base theme that is used in website pages.
      * 
-     * Usually, this theme is used for the normally visitors of the web site.
+     * Usually, this theme is used for the normally visitors of the website.
      * 
      * @return string The name of base theme that is used in website pages.
      */
@@ -228,7 +228,7 @@ class AppConfig implements Config {
      * Returns the base URL that is used to fetch resources.
      * 
      * The return value of this method is usually used by the tag 'base'
-     * of web site pages.
+     * of website pages.
      * 
      * @return string The base URL.
      */
@@ -246,12 +246,12 @@ class AppConfig implements Config {
         return $this->configVision;
     }
     /**
-     * Returns sha256 hash of the password which is used to prevent unauthorized access to run the jobs or access CRON web interface.
+     * Returns sha256 hash of the password which is used to prevent unauthorized access to run the tasks or access scheduler web interface.
      * 
      * @return string Password hash or the string 'NO_PASSWORD' if there is no password.
      */
-    public function getCRONPassword() : string {
-        return $this->cronPass;
+    public function getSchedulerPassword() : string {
+        return $this->schedulerPass;
     }
     /**
      * Returns database connection information given connection name.
@@ -282,7 +282,7 @@ class AppConfig implements Config {
         return $this->dbConnections;
     }
     /**
-     * Returns the global title of the web site that will be used as default page title.
+     * Returns the global title of the website that will be used as default page title.
      * 
      * @param string $langCode Language code such as 'AR' or 'EN'.
      * 
@@ -299,7 +299,7 @@ class AppConfig implements Config {
         }
     }
     /**
-     * Returns the global description of the web site that will be used as default page description.
+     * Returns the global description of the website that will be used as default page description.
      * 
      * @param string $langCode Language code such as 'AR' or 'EN'.
      * 
@@ -376,7 +376,7 @@ class AppConfig implements Config {
      * form 'x.x.x.x'.
      */
     public function getVersion() : string {
-        return $this->appVestion;
+        return $this->appVersion;
     }
     /**
      * Returns a string that represents application release type.
@@ -465,7 +465,7 @@ class AppConfig implements Config {
      * @since 1.0
      */
     private function initVersionInfo() {
-        $this->appVestion = '1.0';
+        $this->appVersion = '1.0';
         $this->appVersionType = 'Stable';
         $this->appReleaseDate = '2021-01-10';
     }
