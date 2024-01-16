@@ -3,3 +3,5 @@ app/storage/*
 vendor/*
 app/sto
 .idea/*
+app/config/AppConfig.php
+app/config/app-config.json
