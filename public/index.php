@@ -41,6 +41,7 @@ class Index {
             }
         }
         $this->loadAppClass();
+        App::setConfigDriver('\\webfiori\\framework\\config\\JsonDriver');
         /**
          * This where magic will start.
          * 
