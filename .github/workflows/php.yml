@@ -28,8 +28,5 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
       
-    - name: AB
-      run: ls $HOME/work/app/app
-      
     - name: Execute Tests
       run: phpunit --configuration $HOME/work/app/app/tests/phpunit.xml
