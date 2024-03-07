@@ -39,7 +39,7 @@ if (explode($DS, __DIR__)[0] == 'home' || explode($DS, __DIR__)[1] == 'home') {
 
     foreach ($WebFioriFrameworkDirs as $dir) {
         //linux 
-        $file = $DS.$dir.'framework'.$DS.'AutoLoader.php';
+        $file = $DS.$dir.$DS.'framework'.$DS.'AutoLoader.php';
         fprintf(STDOUT,"Checking if file '$file' is exist...\n");
 
         if (file_exists($file)) {
