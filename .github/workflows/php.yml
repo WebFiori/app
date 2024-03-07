@@ -1,0 +1,32 @@
+name: PHP Build
+
+on:
+  push:
+    branches: [ main , dev]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+   
+    strategy: 
+      fail-fast: true
+      
+    steps:
+    
+    - uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@2.30.0
+      with:
+        php-version: 8.3
+        extensions: mbstring, sqlsrv, iconv
+        tools: phpunit, composer
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+      
+    - name: Execute Tests
+      run: phpunit

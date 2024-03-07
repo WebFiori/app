@@ -9,8 +9,6 @@ $DS = DIRECTORY_SEPARATOR;
 //TODO: Set the name of JSON configuration file to use inrunning test cases.
 define('JSON_CONFIG','app-config-testing.json');
 
-//TODO: Set unit tests directory. Update as needed.
-define('TESTS_DIRECTORY', 'tests');
 
 //TODO: Set application directory name. Update as needed.
 define('APP_DIR', 'app');
@@ -19,17 +17,18 @@ define('APP_DIR', 'app');
 //Leave as is
 define('UNIT_TESTING', true);
 
+$Root = trim(__DIR__, $DS.'tests');
+
 //an array that contains possible locations at which 
 //WebFiori Framework might exist.
 //Add and remove directories as needed.
 $WebFioriFrameworkDirs = [
-    __DIR__.$DS.'webfiori',
-    __DIR__.$DS.'vendor'.$DS.'webfiori'.$DS.'framework'.$DS.'webfiori'
+    $Root.$DS.'webfiori',
+    $Root.$DS.'vendor'.$DS.'webfiori'.$DS.'framework'.$DS.'webfiori'
 ];
 
 //Printing informative messages in the terminal
 fprintf(STDOUT, "Bootstrap Path: '".__DIR__."'\n");
-fprintf(STDOUT,"Tests Directory: '".TESTS_DIRECTORY."'.\n");
 fprintf(STDOUT,'Include Path: \''.get_include_path().'\''."\n");
 fprintf(STDOUT,"Tryning to load the class 'AutoLoader'...\n");
 $isAutoloaderLoaded = false;
@@ -80,7 +79,7 @@ AutoLoader::get([
         APP_DIR,
     ],
     'define-root' => true,
-    'root' => __DIR__,
+    'root' => $Root,
     'on-load-failure' => 'do-nothing'
 ]);
 fprintf(STDOUT,'Autoloader Initialized.'."\n");
@@ -88,23 +87,30 @@ fprintf(STDOUT,'Autoloader Initialized.'."\n");
 fprintf(STDOUT,"Initializing application...\n");
 define('APP_PATH', AutoLoader::get()->root().$DS.APP_DIR.$DS);
 fprintf(STDOUT,'App Path: '.APP_PATH."\n");
-App::setConfigDriver('\\webfiori\\framework\\config\\JsonDriver');
-App::getConfig()->setConfigFileName('app-config-testing.json');
+$driver = "\\webfiori\\framework\\config\\JsonDriver";
+fprintf(STDOUT,"Setting application configuration driver to '$driver'\n");
+App::setConfigDriver($driver);
+$configFileName = 'app-config-testing.json';
+fprintf(STDOUT,"Setting application configuration file to '$configFileName'\n");
+App::getConfig()->setConfigFileName($configFileName);
 App::getConfig()->initialize();
 App::start();
 fprintf(STDOUT,'Done.'."\n");
 fprintf(STDOUT,'Root Directory: \''.AutoLoader::get()->root().'\'.'."\n");
-define('TESTS_PATH', AutoLoader::get()->root().$DS.TESTS_DIRECTORY);
+define('TESTS_PATH', AutoLoader::get()->root().$DS.'tests');
 fprintf(STDOUT,'Stored Connections:'."\n");
-
-foreach (App::getConfig()->getDBConnections() as $conn) {
-    fprintf(STDOUT,$conn->getName()."\n");
+if (count(App::getConfig()->getDBConnections()) != 0) {
+    foreach (App::getConfig()->getDBConnections() as $conn) {
+        fprintf(STDOUT, $conn->getName()."\n");
+    }
+} else {
+    fprintf(STDOUT, "<<NO DATABSE CONNECTIONS>>\n");
 }
 fprintf(STDOUT, "Registering shutdown function...\n");
 register_shutdown_function(function()
 {
    //TODO: Run extra code after tests completion.   
-    
+    fprintf(STDOUT, "Testing Finished.\n");
 });
 fprintf(STDOUT, "Registering shutdown function completed.\n");
 require_once 'query-runner.php';

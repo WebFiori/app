@@ -3,3 +3,4 @@ app/storage/*
 vendor/*
 app/sto
 .idea/*
+tests/.phpunit.result.cache
