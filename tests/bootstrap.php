@@ -34,7 +34,7 @@ fprintf(STDOUT,"Tryning to load the class 'AutoLoader'...\n");
 $isAutoloaderLoaded = false;
 
 
-if (explode($DS, __DIR__)[0] == 'home') {
+if (explode($DS, __DIR__)[0] == 'home' || explode($DS, __DIR__)[1] == 'home') {
     fprintf(STDOUT,"Run Environment: Linux.\n");
 
     foreach ($WebFioriFrameworkDirs as $dir) {
