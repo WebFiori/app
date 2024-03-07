@@ -27,9 +27,6 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-      
-    - name: Move to Tests Directory
-      run: cd tests
     
     - name: Move to Tests Directory
       run: ls
