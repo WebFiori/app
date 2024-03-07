@@ -29,7 +29,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
       
     - name: AB
-      run: ls $HOME
+      run: ls $HOME/work
       
     - name: Execute Tests
       run: phpunit --configuration "/tests/phpunit.xml"
