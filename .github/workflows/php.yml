@@ -28,5 +28,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
       
+    - name: Move to Tests Directory
+      run: cd tests
+      
     - name: Execute Tests
-      run: phpunit --configuration $HOME/work/app/app/tests/phpunit.xml
+      run: phpunit --configuration phpunit.xml
