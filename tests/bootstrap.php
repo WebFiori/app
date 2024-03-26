@@ -17,7 +17,7 @@ define('APP_DIR', 'app');
 //Leave as is
 define('UNIT_TESTING', true);
 
-$Root = trim(__DIR__, $DS.'tests');
+$Root = substr(__DIR__, 0, strlen(__DIR__) - strlen('tests'));
 
 //an array that contains possible locations at which 
 //WebFiori Framework might exist.
@@ -29,6 +29,7 @@ $WebFioriFrameworkDirs = [
 
 //Printing informative messages in the terminal
 fprintf(STDOUT, "Bootstrap Path: '".__DIR__."'\n");
+fprintf(STDOUT,'Roor Path: \''.$Root.'\''."\n");
 fprintf(STDOUT,'Include Path: \''.get_include_path().'\''."\n");
 fprintf(STDOUT,"Tryning to load the class 'AutoLoader'...\n");
 $isAutoloaderLoaded = false;
