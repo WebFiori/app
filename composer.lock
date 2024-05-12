@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8adb0ed845827a2b7d48090f3d6a3ec9",
+    "content-hash": "818018fc37e4670bb92ba638c2e7675a",
     "packages": [
         {
             "name": "webfiori/cli",
-            "version": "1.2.0",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/cli.git",
-                "reference": "d8e16e166b30a738edd59f331a7fc71d8fc9ac95"
+                "reference": "f5ab0bc5e1566b93b9f3a596937cdcb7b4d8e857"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/cli/zipball/d8e16e166b30a738edd59f331a7fc71d8fc9ac95",
-                "reference": "d8e16e166b30a738edd59f331a7fc71d8fc9ac95",
+                "url": "https://api.github.com/repos/WebFiori/cli/zipball/f5ab0bc5e1566b93b9f3a596937cdcb7b4d8e857",
+                "reference": "f5ab0bc5e1566b93b9f3a596937cdcb7b4d8e857",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/cli/issues",
-                "source": "https://github.com/WebFiori/cli/tree/1.2.0"
+                "source": "https://github.com/WebFiori/cli/tree/v1.2.2"
             },
             "funding": [
                 {
@@ -67,7 +67,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-02-15T22:59:54+00:00"
+            "time": "2024-04-29T21:30:50+00:00"
         },
         {
             "name": "webfiori/collections",
@@ -129,16 +129,16 @@
         },
         {
             "name": "webfiori/database",
-            "version": "v0.8.9",
+            "version": "v0.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/database.git",
-                "reference": "f32a87a734849c85e9b0d3d9dac5da0786524a13"
+                "reference": "f428be21df421bd507924b6a7fe6a938af5cb8f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/database/zipball/f32a87a734849c85e9b0d3d9dac5da0786524a13",
-                "reference": "f32a87a734849c85e9b0d3d9dac5da0786524a13",
+                "url": "https://api.github.com/repos/WebFiori/database/zipball/f428be21df421bd507924b6a7fe6a938af5cb8f6",
+                "reference": "f428be21df421bd507924b6a7fe6a938af5cb8f6",
                 "shasum": ""
             },
             "require": {
@@ -164,7 +164,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/database/issues",
-                "source": "https://github.com/WebFiori/database/tree/v0.8.9"
+                "source": "https://github.com/WebFiori/database/tree/v0.8.10"
             },
             "funding": [
                 {
@@ -180,7 +180,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-01-03T20:45:10+00:00"
+            "time": "2024-04-30T09:46:49+00:00"
         },
         {
             "name": "webfiori/err",
@@ -240,16 +240,16 @@
         },
         {
             "name": "webfiori/file",
-            "version": "v1.3.4",
+            "version": "v1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/file.git",
-                "reference": "41518d44d25a9bd8c7114118d314fd1121f8e1ba"
+                "reference": "badb7251fb8362abfebc51f90d4c97d12e502f15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/file/zipball/41518d44d25a9bd8c7114118d314fd1121f8e1ba",
-                "reference": "41518d44d25a9bd8c7114118d314fd1121f8e1ba",
+                "url": "https://api.github.com/repos/WebFiori/file/zipball/badb7251fb8362abfebc51f90d4c97d12e502f15",
+                "reference": "badb7251fb8362abfebc51f90d4c97d12e502f15",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +285,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/file/issues",
-                "source": "https://github.com/WebFiori/file/tree/v1.3.4"
+                "source": "https://github.com/WebFiori/file/tree/v1.3.6"
             },
             "funding": [
                 {
@@ -301,20 +301,20 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2023-12-03T22:29:42+00:00"
+            "time": "2024-04-29T20:08:30+00:00"
         },
         {
             "name": "webfiori/framework",
-            "version": "v3.0.0-Beta.4",
+            "version": "v3.0.0-Beta.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/framework.git",
-                "reference": "40c290fdb34edb566c4ad010ac6de43c0a2db5d8"
+                "reference": "7841fd266b92146c4eb800adc1b859c9e022dd25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/40c290fdb34edb566c4ad010ac6de43c0a2db5d8",
-                "reference": "40c290fdb34edb566c4ad010ac6de43c0a2db5d8",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/7841fd266b92146c4eb800adc1b859c9e022dd25",
+                "reference": "7841fd266b92146c4eb800adc1b859c9e022dd25",
                 "shasum": ""
             },
             "require": {
@@ -323,12 +323,12 @@
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
                 "php": ">=7.0",
-                "webfiori/cli": "v1.2.0",
+                "webfiori/cli": "v1.2.2",
                 "webfiori/collections": "v1.1.4",
-                "webfiori/database": "v0.8.9",
+                "webfiori/database": "v0.8.10",
                 "webfiori/err": "v1.0.9",
-                "webfiori/file": "v1.3.4",
-                "webfiori/http": "v3.3.10",
+                "webfiori/file": "v1.3.6",
+                "webfiori/http": "v3.3.11",
                 "webfiori/jsonx": "v3.3.0",
                 "webfiori/mailer": "v1.2.0",
                 "webfiori/ui": "v2.6.1"
@@ -377,20 +377,20 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-04-14T16:23:21+00:00"
+            "time": "2024-05-12T12:00:01+00:00"
         },
         {
             "name": "webfiori/http",
-            "version": "v3.3.10",
+            "version": "v3.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/http.git",
-                "reference": "3aad4f995ac04d278c6f997cebb2213ac910d508"
+                "reference": "f3e59fc0b16f1b94964672e5b6d5ca20804176ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/http/zipball/3aad4f995ac04d278c6f997cebb2213ac910d508",
-                "reference": "3aad4f995ac04d278c6f997cebb2213ac910d508",
+                "url": "https://api.github.com/repos/WebFiori/http/zipball/f3e59fc0b16f1b94964672e5b6d5ca20804176ab",
+                "reference": "f3e59fc0b16f1b94964672e5b6d5ca20804176ab",
                 "shasum": ""
             },
             "require": {
@@ -422,7 +422,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/http/issues",
-                "source": "https://github.com/WebFiori/http/tree/v3.3.10"
+                "source": "https://github.com/WebFiori/http/tree/v3.3.11"
             },
             "funding": [
                 {
@@ -430,7 +430,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-04-14T15:00:55+00:00"
+            "time": "2024-04-15T13:29:50+00:00"
         },
         {
             "name": "webfiori/jsonx",
