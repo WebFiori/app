@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e7f39a7acce746958802af649e95548",
+    "content-hash": "7d6713d2033cddbc85bf171d79a7a079",
     "packages": [
         {
             "name": "webfiori/cli",
@@ -305,16 +305,16 @@
         },
         {
             "name": "webfiori/framework",
-            "version": "v3.0.0-Beta.13",
+            "version": "3.0.0-Beta.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/framework.git",
-                "reference": "90ca2f457bbfa2084bdb8764dddcca86b8c42d6b"
+                "reference": "ffba40f52f419b6d1b93620757d5e85360d64938"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/90ca2f457bbfa2084bdb8764dddcca86b8c42d6b",
-                "reference": "90ca2f457bbfa2084bdb8764dddcca86b8c42d6b",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/ffba40f52f419b6d1b93620757d5e85360d64938",
+                "reference": "ffba40f52f419b6d1b93620757d5e85360d64938",
                 "shasum": ""
             },
             "require": {
@@ -328,7 +328,7 @@
                 "webfiori/database": "v0.8.11",
                 "webfiori/err": "v1.1.0",
                 "webfiori/file": "v1.3.6",
-                "webfiori/http": "v3.3.14",
+                "webfiori/http": "v3.3.15",
                 "webfiori/jsonx": "v3.3.0",
                 "webfiori/mailer": "v1.2.0",
                 "webfiori/ui": "v2.6.3"
@@ -346,7 +346,9 @@
             "authors": [
                 {
                     "name": "Ibrahim BinAlshikh",
-                    "email": "ibrahim@webfiori.com"
+                    "email": "ibrahim@webfiori.com",
+                    "homepage": "https://ibrahim-binalshikh.me",
+                    "role": "Maintainer"
                 }
             ],
             "description": "WebFiori framework. Made to make the web bloom.",
@@ -377,20 +379,20 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-10-28T22:11:29+00:00"
+            "time": "2024-11-21T09:29:08+00:00"
         },
         {
             "name": "webfiori/http",
-            "version": "v3.3.14",
+            "version": "v3.3.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/http.git",
-                "reference": "00d1afe176fba3773ba09153d6c6b2600badfb17"
+                "reference": "842d9aed0bdf96dd45b44b03f9a04fa8ee7d895d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/http/zipball/00d1afe176fba3773ba09153d6c6b2600badfb17",
-                "reference": "00d1afe176fba3773ba09153d6c6b2600badfb17",
+                "url": "https://api.github.com/repos/WebFiori/http/zipball/842d9aed0bdf96dd45b44b03f9a04fa8ee7d895d",
+                "reference": "842d9aed0bdf96dd45b44b03f9a04fa8ee7d895d",
                 "shasum": ""
             },
             "require": {
@@ -422,7 +424,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WebFiori/http/issues",
-                "source": "https://github.com/WebFiori/http/tree/v3.3.14"
+                "source": "https://github.com/WebFiori/http/tree/v3.3.15"
             },
             "funding": [
                 {
@@ -430,7 +432,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-09-01T14:46:17+00:00"
+            "time": "2024-11-20T20:47:16+00:00"
         },
         {
             "name": "webfiori/jsonx",
@@ -604,5 +606,5 @@
         "php": ">=7.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

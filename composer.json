@@ -4,9 +4,10 @@
     "authors": [
         
     ],
+    "type":"project",
     "require": {
         "php": ">=7.0",
-        "webfiori/framework":"v3.0.0-Beta.13"
+        "webfiori/framework":"v3.0.0-Beta.14"
     },
     "keywords": [
         "framework",
