@@ -7,7 +7,7 @@
     "type":"project",
     "require": {
         "php": ">=7.0",
-        "webfiori/framework":"v3.0.0-Beta.14"
+        "webfiori/framework":"v3.0.0-Beta.17"
     },
     "keywords": [
         "framework",
