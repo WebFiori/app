@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    
+  test:
+    name: Run Tests
     runs-on: ubuntu-latest
    
     strategy: 
@@ -16,7 +16,7 @@ jobs:
       
     steps:
     
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup PHP
       uses: shivammathur/setup-php@2.30.0
@@ -30,3 +30,31 @@ jobs:
       
     - name: Execute Tests
       run: phpunit --configuration tests/phpunit.xml
+      
+  release_staging:
+    name: Prepare Beta Release Branch
+    needs:
+      - "test"
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: php
+          default-branch: dev
+          config-file: release-please-config.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+  release_prod:
+    name: Prepare Production Release Branch
+    needs:
+      - "test"
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: php
+          config-file: release-please-config.json
+          token: ${{ secrets.GITHUB_TOKEN }}
