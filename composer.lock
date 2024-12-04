@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "745e631b8a738774bec82ac84ff0d97d",
+    "content-hash": "29c24698bdf5f5bda9e996bcbda70ace",
     "packages": [
         {
             "name": "webfiori/cli",
@@ -305,16 +305,16 @@
         },
         {
             "name": "webfiori/framework",
-            "version": "3.0.0-Beta.17",
+            "version": "3.0.0-Beta.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/framework.git",
-                "reference": "0f6e4ae014d7e93b15081af0bbc1bc9e6150d666"
+                "reference": "8ba7eb498664041c7bf5fdcdcc2b432421afcbf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/0f6e4ae014d7e93b15081af0bbc1bc9e6150d666",
-                "reference": "0f6e4ae014d7e93b15081af0bbc1bc9e6150d666",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/8ba7eb498664041c7bf5fdcdcc2b432421afcbf8",
+                "reference": "8ba7eb498664041c7bf5fdcdcc2b432421afcbf8",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +379,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-12-03T22:18:05+00:00"
+            "time": "2024-12-04T12:03:19+00:00"
         },
         {
             "name": "webfiori/http",

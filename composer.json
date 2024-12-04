@@ -7,15 +7,6 @@
     "type":"project",
     "require": {
         "php": ">=7.0",
-        "webfiori/framework":"v3.0.0-Beta.17"
-    },
-    "keywords": [
-        "framework",
-        "webfiori",
-        "php",
-        "API",
-        "Web APIs",
-        "Themes"
-    ],
-    "license": "MIT"
+        "webfiori/framework":"v3.0.0-Beta.18"
+    }
 }
