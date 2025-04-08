@@ -93,6 +93,7 @@ fprintf(STDOUT,"Setting application configuration driver to '$driver'\n");
 App::setConfigDriver($driver);
 $configFileName = 'app-config-testing.json';
 fprintf(STDOUT,"Setting application configuration file to '$configFileName'\n");
+App::initiate(APP_DIR);
 App::getConfig()->setConfigFileName($configFileName);
 App::getConfig()->initialize();
 App::start();
