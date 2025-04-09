@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0-Beta.26](https://github.com/WebFiori/app/compare/v3.0.0-Beta.18...v3.0.0-Beta.26) (2025-04-09)
+
+
+### Miscellaneous Chores
+
+* release v3.0.0-Beta.26 ([e21bbf5](https://github.com/WebFiori/app/commit/e21bbf5aedcbccaf83faff0e336561adaa72049c))
+* Updated Framework Version ([7416076](https://github.com/WebFiori/app/commit/74160762dafa7509d7bfd531062be1886979f7b2))
+
 ## [3.0.0-Beta.18](https://github.com/WebFiori/app/compare/v3.0.0-RC7...v3.0.0-Beta.18) (2024-12-04)
 
 
