@@ -1,10 +1,13 @@
 <?php
 
-namespace webfiori;
+namespace WebFiori;
 
-require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
+$DS = DIRECTORY_SEPARATOR;
 
-use webfiori\framework\App;
-App::initiate('app', 'public', __DIR__);
+require __DIR__.$DS.'..'.$DS.'vendor'.$DS.'autoload.php';
+
+use WebFiori\Framework\App;
+
+App::initiate('App', 'public', __DIR__);
 App::start();
 App::handle();
