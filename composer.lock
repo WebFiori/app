@@ -300,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebFiori/framework.git",
-                "reference": "518a95754bbdbdfe3127b88d0ccafe3a078f569a"
+                "reference": "fcfbc85e28dc4b69f01e2e27a11376dde95ce74d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebFiori/framework/zipball/518a95754bbdbdfe3127b88d0ccafe3a078f569a",
-                "reference": "518a95754bbdbdfe3127b88d0ccafe3a078f569a",
+                "url": "https://api.github.com/repos/WebFiori/framework/zipball/fcfbc85e28dc4b69f01e2e27a11376dde95ce74d",
+                "reference": "fcfbc85e28dc4b69f01e2e27a11376dde95ce74d",
                 "shasum": ""
             },
             "require": {
@@ -361,7 +361,7 @@
                 "issues": "https://github.com/webfiori/framework/issues",
                 "source": "https://github.com/webfiori/framework"
             },
-            "time": "2026-03-30T15:16:20+00:00"
+            "time": "2026-03-30T21:00:24+00:00"
         },
         {
             "name": "webfiori/http",
