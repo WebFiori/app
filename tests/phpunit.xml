@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="bootstrap.php">
-    <php>
-    </php>
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
-            <!-- TODO: Specify files to be covered by tests-->
-            <!--<file>./webfiori/framework/Access.php</file>-->
-        </whitelist>
-    </filter>
-    <logging>
-        <log type="coverage-clover" target="clover.xml"/>
-    </logging>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
+         bootstrap="bootstrap.php"
+         colors="true">
     <testsuites>
-        <!-- TODO: Specify test suits. Each folder should have one suite.-->
-        
-        <testsuite name="General Tests">
-            <directory>./sample</directory>
+        <testsuite name="App APIs">
+            <directory>Apis</directory>
         </testsuite>
-        
     </testsuites>
 </phpunit>
