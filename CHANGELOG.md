@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0-RC0](https://github.com/WebFiori/app/compare/v3.0.0-Beta.26...v3.0.0-RC0) (2026-04-09)
+
+
+### Miscellaneous Chores
+
+* Added PHP CS Fixer Config ([081c2f9](https://github.com/WebFiori/app/commit/081c2f9980b58b4a98d96b2508ab8d20a86af588))
+* Merge pull request [#18](https://github.com/WebFiori/app/issues/18) from WebFiori/dev ([897a8c9](https://github.com/WebFiori/app/commit/897a8c956ba574ae5e36c13b7eed44296fc733db))
+* No Longer Needed ([f9b1a8a](https://github.com/WebFiori/app/commit/f9b1a8aa599655ac1af48f4576f219c9a66c873e))
+* Removal of All Files That Are Not Needed ([2ede96a](https://github.com/WebFiori/app/commit/2ede96a6251d84926912fdfd84e74f0c417b7ab2))
+* Run CS Fixer ([3020451](https://github.com/WebFiori/app/commit/302045148798237c72124ca2ec2c931f4c57deb8))
+* Updated `index.php` ([2156f3f](https://github.com/WebFiori/app/commit/2156f3f28ebee5592e3a47900efef7aee52f6444))
+* Updated Dependencies ([2e4b526](https://github.com/WebFiori/app/commit/2e4b526cd8d1fa015d0aee2ec87336af935b27ed))
+* Updated Dependencies ([0a59617](https://github.com/WebFiori/app/commit/0a59617c5699782fad851e0e98b4d67acf8521a6))
+* Updated Dependencies ([1e098bc](https://github.com/WebFiori/app/commit/1e098bcb0909de04a57eef05220a52851a9e161b))
+* Updated Dependencies ([53a7712](https://github.com/WebFiori/app/commit/53a771253a7736c4a7b71a23eb57c1d6eecd28e1))
+* Updated GitIgnore ([7d8d57f](https://github.com/WebFiori/app/commit/7d8d57ff0d1bbd9fb9fcab0eb697eaae1645b76e))
+* Updated Release Content ([6b77a54](https://github.com/WebFiori/app/commit/6b77a54cc82b0487187b6547895f0f93016de051))
+
 ## [3.0.0-Beta.26](https://github.com/WebFiori/app/compare/v3.0.0-Beta.18...v3.0.0-Beta.26) (2025-04-09)
 
 
