@@ -57,15 +57,6 @@ class TemplateTheme extends Theme {
         return $node;
     }
 
-    public function getHeadNode() {
-        $headTag = new HeadNode();
-        //Add head tag tags here as needed.
-        //Note that you don't have to add CSS and JS files of the theme as 
-        //They will be added automatically for you.
-
-        return $headTag;
-    }
-
     public function getHeaderNode() {
         $headerSec = new HTMLNode();
         $headerBody = new HTMLNode();
@@ -73,5 +64,14 @@ class TemplateTheme extends Theme {
         $headerSec->addChild($headerBody);
 
         return $headerSec;
+    }
+
+    public function getHeadNode() {
+        $headTag = new HeadNode();
+        //Add head tag tags here as needed.
+        //Note that you don't have to add CSS and JS files of the theme as
+        //They will be added automatically for you.
+
+        return $headTag;
     }
 }

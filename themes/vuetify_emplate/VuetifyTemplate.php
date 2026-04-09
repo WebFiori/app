@@ -77,24 +77,24 @@ class VuetifyTemplate extends Theme {
         return $footer;
     }
 
+    public function getHeaderNode() {
+        $aside = new HTMLNode('v-toolbar');
+
+        return $aside;
+    }
+
     public function getHeadNode() {
         $node = new HeadNode();
         $lang = Page::translation();
 
         $node->addCSS(Page::cssDir().'/theme.css')
-        ->addCSS('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',[], false)
-        ->addCSS('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css', [], false)
-        ->addCSS('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css', [], false)
-        ->addJs('https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js', [], false)
-        ->addJs('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js', [], false);
+            ->addCSS('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',[], false)
+            ->addCSS('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css', [], false)
+            ->addCSS('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css', [], false)
+            ->addJs('https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js', [], false)
+            ->addJs('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js', [], false);
 
         return $node;
-    }
-
-    public function getHeaderNode() {
-        $aside = new HTMLNode('v-toolbar');
-
-        return $aside;
     }
 }
 

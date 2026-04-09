@@ -13,7 +13,7 @@ use webfiori\ui\HTMLNode;
 use webfiori\ui\JsCode;
 /**
  * A theme which is created to be used by the website https://ibrahim-binalshikh.me
- * 
+ *
  */
 class IbrahimTheme extends Theme {
     public function __construct() {
@@ -89,7 +89,7 @@ class IbrahimTheme extends Theme {
                             'secondary' => '#4caf50',
                             'accent' => '#795548',
                             'error' => '#f44336',
-                            'warning' => '#ff9800', 
+                            'warning' => '#ff9800',
                             'info' => '#607d8b',
                             'success' => '#00bcd4'
                         ]),
@@ -98,7 +98,7 @@ class IbrahimTheme extends Theme {
                             'secondary' => '#4caf50',
                             'accent' => '#795548',
                             'error' => '#f44336',
-                            'warning' => '#ff9800', 
+                            'warning' => '#ff9800',
                             'info' => '#607d8b',
                             'success' => '#00bcd4'
                         ])
@@ -113,11 +113,11 @@ class IbrahimTheme extends Theme {
     public function createAvatar() {
         $vList = new HTMLNode('v-list');
         $vList->addChild('v-list-item')
-                ->addChild('v-list-item-avatar')
-                ->addChild('img', [
-                    'src' => 'assets/images/WFLogo512.png',
-                    'alt' => 'A'
-                ]);
+            ->addChild('v-list-item-avatar')
+            ->addChild('img', [
+                'src' => 'assets/images/WFLogo512.png',
+                'alt' => 'A'
+            ]);
 
         return $vList;
     }
@@ -131,11 +131,11 @@ class IbrahimTheme extends Theme {
             if ($type == 'menu') {
                 $text = isset($options['title']) ? $options['title'] : 'Menu';
                 $attrs = [
-                'bottom',
-                'origin' => "center center",
-                'transition' => "scale-transition",
-                'color' => "transparent"
-            ];
+                    'bottom',
+                    'origin' => "center center",
+                    'transition' => "scale-transition",
+                    'color' => "transparent"
+                ];
 
                 return $this->createMenu($text, $attrs);
             } else {
@@ -194,8 +194,8 @@ class IbrahimTheme extends Theme {
         $itemsPanel = new HTMLNode('template');
         $sideDrawer->addChild($itemsPanel);
         $itemsPanel->addChild('v-expansion-panels', [], false)
-        ->addChild($this->createDrawerMenuItem($this->createButton(['text', 'block', 'href' => $this->getBaseURL().'/about-me'], Page::translation()->get('main-menu/about-me'), 'mdi-information-variant')))
-        ->addChild($this->createDrawerMenuItem($this->createButton(['text', 'block', 'href' => $this->getBaseURL().'/contact-me'], Page::translation()->get('main-menu/contact-me'), 'mdi-comment-plus-outline')));
+            ->addChild($this->createDrawerMenuItem($this->createButton(['text', 'block', 'href' => $this->getBaseURL().'/about-me'], Page::translation()->get('main-menu/about-me'), 'mdi-information-variant')))
+            ->addChild($this->createDrawerMenuItem($this->createButton(['text', 'block', 'href' => $this->getBaseURL().'/contact-me'], Page::translation()->get('main-menu/contact-me'), 'mdi-comment-plus-outline')));
 
         return $sideDrawer;
     }
@@ -206,34 +206,34 @@ class IbrahimTheme extends Theme {
         $card = new HTMLNode('v-card', ['flat', 'tile', 'class' => 'flex', 'dark']);
         $footer->addChild($card);
         $card->addChild('v-card-text')
-                ->addChild($this->createButton([
-                    'text', 
-                    'fab', 
-                    'x-small',
-                    'target' => '_blank',
-                    'href' => 'https://www.linkedin.com/in/ibrahim-binalshikh/'], null, 'mdi-linkedin'), true)
-                ->addChild($this->createButton([
-                    'text', 
-                    'fab', 
-                    'x-small',
-                    'target' => '_blank',
-                    'href' => 'https://t.me/WarriorVx'], null, 'mdi-telegram'), true)
-                ->addChild($this->createButton([
-                    'text', 
-                    'fab', 
-                    'x-small',
-                    'target' => '_blank',
-                    'href' => 'https://github.com/usernane'], null, 'mdi-github'), true);
+            ->addChild($this->createButton([
+                'text',
+                'fab',
+                'x-small',
+                'target' => '_blank',
+                'href' => 'https://www.linkedin.com/in/ibrahim-binalshikh/'], null, 'mdi-linkedin'), true)
+            ->addChild($this->createButton([
+                'text',
+                'fab',
+                'x-small',
+                'target' => '_blank',
+                'href' => 'https://t.me/WarriorVx'], null, 'mdi-telegram'), true)
+            ->addChild($this->createButton([
+                'text',
+                'fab',
+                'x-small',
+                'target' => '_blank',
+                'href' => 'https://github.com/usernane'], null, 'mdi-github'), true);
 
 
         $card->addChild('v-card-text')
-        ->addChild('small')
-        ->text($this->getPage()->get('footer/built-with'))
-         ->addChild(new Anchor('https://webfiori.com', $this->getPage()->get('general/framework-name')));
+            ->addChild('small')
+            ->text($this->getPage()->get('footer/built-with'))
+            ->addChild(new Anchor('https://webfiori.com', $this->getPage()->get('general/framework-name')));
 
         $card->addChild('v-divider')
-        ->addChild('v-card-text', ['flat'], false)
-        ->addChild('small', [], false)->text($this->getPage()->get('footer/all-rights').' '.date('Y'));
+            ->addChild('v-card-text', ['flat'], false)
+            ->addChild('small', [], false)->text($this->getPage()->get('footer/all-rights').' '.date('Y'));
 
         return $footer;
     }
@@ -250,6 +250,68 @@ class IbrahimTheme extends Theme {
 
             return $node;
         }
+    }
+
+    public function getHeaderNode() {
+        $vAppBar = new HTMLNode('v-app-bar', [
+            'app',
+            'color' => 'green',
+            //'src' => $this->getBaseURL().'/assets/images/WFLogo512.png',
+            //'hide-on-scroll',
+            'elevate-on-scroll',
+            'fixed',
+            'perminant'
+        ]);
+
+        $vAppBar->addChild('v-app-bar-nav-icon', [
+            'class' => 'd-sm-flex d-md-none',
+            '@click' => "drawer = !drawer",
+        ], true)->addChild('v-toolbar-title', [
+            'style' => [
+                'min-width' => '250px'
+            ]
+        ])
+            ->addChild('v-row',[
+                'class' => 'd-none d-md-flex'
+            ])
+            ->addChild('v-col', [
+                'cols' => 12,
+                'md' => 4
+            ])->addChild('img', [
+            'src' => 'assets/images/WFLogo512.png',
+            'style' => [
+                'width' => '60px'
+            ]
+        ], true)
+            ->getParent()
+            ->addChild('v-col', [
+                'cols' => 12,
+                'md' => 8,
+                'class' => 'align-center d-flex'
+            ])
+            ->addChild(new Anchor($this->getBaseURL(),
+                $this->getPage()->getWebsiteName()
+            ), [
+                'style' => [
+                    'color' => 'white',
+                    'text-decoration' => 'none',
+                    'font-weight' => 'bold'
+                ],
+                'class' => 'site-name align-center'
+            ]);
+        $vAppBar->addChild('v-spacer');
+        $navLinksContainer = new HTMLNode('v-container', [
+            'class' => 'd-none d-md-flex'
+        ]);
+        $vAppBar->addChild($navLinksContainer);
+        $navLinksContainer
+            ->addChild($this->createButton(['text', 'href' => $this->getBaseURL().'/about-me'], $this->getPage()->get('main-menu/about-me'), 'mdi-information-variant'), true)
+            ->addChild($this->createButton(['text', 'href' => $this->getBaseURL().'/contact-me'], $this->getPage()->get('main-menu/contact-me'), 'mdi-comment-plus-outline'), true)
+            ->getParent()->addChild('v-spacer');
+        //$this->createDarkSwitch($vAppBar);
+        $this->createLangSwitch($vAppBar);
+
+        return $vAppBar;
     }
 
     public function getHeadNode() {
@@ -282,68 +344,6 @@ class IbrahimTheme extends Theme {
         }
 
         return $head;
-    }
-
-    public function getHeaderNode() {
-        $vAppBar = new HTMLNode('v-app-bar', [
-            'app',
-            'color' => 'green',
-            //'src' => $this->getBaseURL().'/assets/images/WFLogo512.png',
-            //'hide-on-scroll',
-            'elevate-on-scroll',
-            'fixed',
-            'perminant'
-        ]);
-
-        $vAppBar->addChild('v-app-bar-nav-icon', [
-            'class' => 'd-sm-flex d-md-none',
-            '@click' => "drawer = !drawer",
-        ], true)->addChild('v-toolbar-title', [
-            'style' => [
-                'min-width' => '250px'
-            ]
-        ])
-        ->addChild('v-row',[
-            'class' => 'd-none d-md-flex'
-        ])
-        ->addChild('v-col', [
-            'cols' => 12,
-            'md' => 4
-        ])->addChild('img', [
-            'src' => 'assets/images/WFLogo512.png',
-            'style' => [
-                'width' => '60px'
-            ]
-        ], true)
-        ->getParent()
-        ->addChild('v-col', [
-            'cols' => 12,
-            'md' => 8,
-            'class' => 'align-center d-flex'
-        ])
-        ->addChild(new Anchor($this->getBaseURL(), 
-        $this->getPage()->getWebsiteName()
-                ), [
-            'style' => [
-                'color' => 'white',
-                'text-decoration' => 'none',
-                'font-weight' => 'bold'
-            ],
-            'class' => 'site-name align-center'
-        ]);
-        $vAppBar->addChild('v-spacer');
-        $navLinksContainer = new HTMLNode('v-container', [
-            'class' => 'd-none d-md-flex'
-        ]);
-        $vAppBar->addChild($navLinksContainer);
-        $navLinksContainer
-                ->addChild($this->createButton(['text', 'href' => $this->getBaseURL().'/about-me'], $this->getPage()->get('main-menu/about-me'), 'mdi-information-variant'), true)
-                ->addChild($this->createButton(['text', 'href' => $this->getBaseURL().'/contact-me'], $this->getPage()->get('main-menu/contact-me'), 'mdi-comment-plus-outline'), true)
-                ->getParent()->addChild('v-spacer');
-        //$this->createDarkSwitch($vAppBar);
-        $this->createLangSwitch($vAppBar);
-
-        return $vAppBar;
     }
     private function createButton($props = [], $text = null, $icon = null, $iconProps = []) {
         $btn = new HTMLNode('v-btn', $props);
@@ -378,7 +378,7 @@ class IbrahimTheme extends Theme {
     private function createDrawerMenuItem($listTitle) {
         $item = new HTMLNode('v-list-item');
         $last = $item->addChild('v-list-item-content', [], false)
-             ->addChild('v-list-item-title', [], false);
+            ->addChild('v-list-item-title', [], false);
 
         if ($listTitle instanceof HTMLNode) {
             $last->addChild($listTitle);
@@ -403,7 +403,7 @@ class IbrahimTheme extends Theme {
             } else {
                 $heading->text($options['title']);
             }
-        } 
+        }
         $headingCol = new HTMLNode('v-col', [
             'cols' => 10
         ]);
@@ -434,8 +434,8 @@ class IbrahimTheme extends Theme {
 
         foreach ($this->getPage()->get('main-menu/lang-switch') as $langCode => $label) {
             $langsList->addChild('v-list-item', [], false)
-                    ->addChild('v-list-item-title', [], false)
-                    ->addChild(new Anchor($canonical.'?lang='.$langCode, $label));
+                ->addChild('v-list-item-title', [], false)
+                ->addChild(new Anchor($canonical.'?lang='.$langCode, $label));
         }
     }
     private function createMenu($title, $attrs) {
@@ -443,7 +443,7 @@ class IbrahimTheme extends Theme {
         $menu->addChild('template', [
             'v-slot:activator' => "{ on, attrs }"
         ], false)->addChild('v-btn', [], false)
-                ->text($title);
+            ->text($title);
 
         return $menu;
     }
@@ -452,7 +452,7 @@ class IbrahimTheme extends Theme {
         $row->addChild('v-col', [
             'cols' => 12
         ], false)->addChild('v-card', [], false)
-                ->addChild('v-card-title', [], false)->text($title);
+            ->addChild('v-card-title', [], false)->text($title);
 
         return $row;
     }
@@ -470,7 +470,7 @@ class IbrahimTheme extends Theme {
         ], false)->addChild('v-icon', [
             'v-if' => '!fab'
         ], false)->text('mdi-share-variant-outline')
-        ->getParent()->addChild('v-icon', [
+            ->getParent()->addChild('v-icon', [
             'v-else'
         ], false)->text('mdi-close');
         $btn->addChild($this->createButton([

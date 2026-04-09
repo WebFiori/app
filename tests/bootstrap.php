@@ -2,16 +2,16 @@
 
 $root = dirname(__DIR__);
 fwrite(STDOUT, "Root: ".$root."\n");
-require $root . '/vendor/autoload.php';
+require $root.'/vendor/autoload.php';
 
 use WebFiori\Framework\App;
 
 fwrite(STDOUT, "Initializing App...\n");
 try {
-    App::initiate('App', 'public', $root . '/public');
+    App::initiate('App', 'public', $root.'/public');
     App::start();
-} catch (\Throwable $e) {
-    fwrite(STDOUT, "Error During Initialization: " . $e->getMessage() . "\n");
+} catch (Throwable $e) {
+    fwrite(STDOUT, "Error During Initialization: ".$e->getMessage()."\n");
     exit(1);
 }
 fwrite(STDOUT, "Done\n");
@@ -57,7 +57,7 @@ fwrite(STDOUT, "----------------------------------------------\n");
 
 //TODO: Routines after testing. Or Remove
 // register_shutdown_function(function () {
-    
+
 // });
 // fwrite(STDOUT, "----------------------------------------------\n");
 fwrite(STDOUT, "Bootstrapping Done\n");

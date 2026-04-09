@@ -4,12 +4,12 @@ namespace themes\webfiori;
 use webfiori\framework\Page;
 use webfiori\framework\Theme;
 use webfiori\framework\WebFioriApp;
+use webfiori\theme\LangExt;
 use webfiori\ui\HeadNode;
 use webfiori\ui\HTMLNode;
 use webfiori\ui\Input;
 use webfiori\ui\Label;
 use webfiori\ui\PNode;
-use webfiori\theme\LangExt;
 
 class WebFioriTheme extends Theme {
     public function __construct() {
@@ -42,45 +42,45 @@ class WebFioriTheme extends Theme {
         });
     }
     /**
-     * 
-     * @param array $options An associative array of options. Available 
+     *
+     * @param array $options An associative array of options. Available
      * options are:
      * <ul>
-     * <li>type: The type of the node that will be created. Supported 
-     * types are: 
+     * <li>type: The type of the node that will be created. Supported
+     * types are:
      * <ul>
      * <li>"div" (default).</li>
-     * <li>"wf-row". This type has the following options: 
+     * <li>"wf-row". This type has the following options:
      * <ul>
      * <li>"with-padding", a boolean. If set to true, the row will have padding. Default is true.</li>
      * <li>"with-margin", a boolean. If set to true, the row will have margins. Default is true.</li>
      * </ul>
      * </li>
-     * <li>"wf-col". This type has the following options: 
+     * <li>"wf-col". This type has the following options:
      * <ul>
      * <li>"size". Size of the column. A number from 1 up to 12. Default is 12.</li>
      * <li>"with-padding", a boolean. If set to true, the column will have padding. Default is true.</li>
      * <li>"with-margin", a boolean. If set to true, the column will have margins. Default is true.</li>
      * </ul>
      * </li>
-     * <li>"status-label". A row with a label inside it which has a paragraph 
+     * <li>"status-label". A row with a label inside it which has a paragraph
      * with ID = "status-label"</li>
-     * <li>"input-element". A row which represents input element alongside its components. 
+     * <li>"input-element". A row which represents input element alongside its components.
      * This type has the following options:
      * <ul>
      * <li>"input-type". The type of input element. Default is "text"</li>
-     * <li>"label". The label which will be used for the input element. 
+     * <li>"label". The label which will be used for the input element.
      * If not provided, the value 'Input_label' is used.</li>
-     * <li>"input-id". The ID of input element. If not provided, the 
+     * <li>"input-id". The ID of input element. If not provided, the
      * value 'input-el' is used.</li>
      * <li>"placeholder" A text to show as a placeholder.</li>
-     * <li>"on-input". A String that represents JavaScript code which 
+     * <li>"on-input". A String that represents JavaScript code which
      * will be executed when input element value changes.</li>
      * <li>
-     * "name". A string that is used when input type is "radio". Its the value 
+     * "name". A string that is used when input type is "radio". Its the value
      * of the attribute "name" of the radio button.
      * </li>
-     * <li>"select-data". An array of sub-associative arrays that has an options which are 
+     * <li>"select-data". An array of sub-associative arrays that has an options which are
      * used if input element type is "select". Each sub array can have the following indices:
      * <ul>
      * <li>"label". A label to show for the select option.</li>
@@ -139,8 +139,8 @@ class WebFioriTheme extends Theme {
                     } else {
                         if ($nodeType == 'page-title') {
                             $titleRow = $this->createHTMLNode([
-                            'type' => 'wf-row'
-                        ]);
+                                'type' => 'wf-row'
+                            ]);
                             $titleRow->setID('page-title');
                             $title = isset($options['title']) ? $options['title'] : Page::title();
                             $h1 = new HTMLNode('h2');
@@ -207,8 +207,8 @@ class WebFioriTheme extends Theme {
                                         } else {
                                             if ($inputType == 'checkbox' || $inputType == 'radio') {
                                                 $labelNode->setStyle([
-                                    'display' => 'inline-block'
-                                ]);
+                                                    'display' => 'inline-block'
+                                                ]);
                                                 $row->addChild($inputEl);
                                                 $row->addChild($labelNode);
 
@@ -258,14 +258,6 @@ class WebFioriTheme extends Theme {
         return $node;
     }
 
-    public function getHeadNode() {
-        $headTag = new HeadNode();
-        $headTag->addLink('icon', 'favicon.png');
-        $headTag->addMeta('robots', 'index, follow');
-
-        return $headTag;
-    }
-
     public function getHeaderNode() {
         $headerSec = HTMLNode::loadComponent($this->getDirecotry().'header.html', [
             'menu-labels' => Page::translation()->get('menus/main-menu'),
@@ -280,6 +272,14 @@ class WebFioriTheme extends Theme {
         ]);
 
         return $headerSec;
+    }
+
+    public function getHeadNode() {
+        $headTag = new HeadNode();
+        $headTag->addLink('icon', 'favicon.png');
+        $headTag->addMeta('robots', 'index, follow');
+
+        return $headTag;
     }
 }
 

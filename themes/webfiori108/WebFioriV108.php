@@ -1,7 +1,6 @@
 <?php
 namespace themes\webfiori108;
 
-
 use WebFiori\Framework\Session\SessionsManager;
 use WebFiori\Framework\Theme;
 use WebFiori\Framework\WebFioriApp;
@@ -151,9 +150,9 @@ class WebFioriV108 extends Theme {
                         $textButton->setClassName('btn btn-secondary p-0');
                         $textButton->setAttribute('type', 'button');
                         $textButton->setStyle([
-                    'background' => 'transparent',
-                    'border' => '0px'
-                ]);
+                            'background' => 'transparent',
+                            'border' => '0px'
+                        ]);
                         $liDiv->addChild($textButton);
 
                         if ($link !== null) {
@@ -164,23 +163,23 @@ class WebFioriV108 extends Theme {
                         $expandButton = new HTMLNode('button');
                         $expandButton->setClassName('btn btn-secondary dropdown-toggle dropdown-toggle-split');
                         $expandButton->setStyle([
-                    'background' => 'transparent',
-                    'border' => '0px'
-                ]);
+                            'background' => 'transparent',
+                            'border' => '0px'
+                        ]);
                         $expandButton->setAttributes([
-                    'type' => 'button',
-                    'data-toggle' => "dropdown",
-                    'aria-haspopup' => "true",
-                    'aria-expanded' => "false"
-                ]);
+                            'type' => 'button',
+                            'data-toggle' => "dropdown",
+                            'aria-haspopup' => "true",
+                            'aria-expanded' => "false"
+                        ]);
                         $liDiv->addChild($expandButton);
                         $subItemsContainer = new HTMLNode();
                         $liDiv->addChild($subItemsContainer);
                         $subItemsContainer->setAttributes([
-                    'class' => 'dropdown-menu',
-                    'x-placement' => 'right-start',
-                    'style' => 'position: absolute; transform: translate3d(159px, 0px, 0px); top: 0px; left: 0px; will-change: transform;',
-                ]);
+                            'class' => 'dropdown-menu',
+                            'x-placement' => 'right-start',
+                            'style' => 'position: absolute; transform: translate3d(159px, 0px, 0px); top: 0px; left: 0px; will-change: transform;',
+                        ]);
                         $index = 0;
 
                         foreach ($subListItems as $listItem) {
@@ -280,15 +279,6 @@ class WebFioriV108 extends Theme {
 
         return $footer;
     }
-    public function getHeadNode(): HeadNode {
-        $head = new HeadNode();
-        $head->addCSS('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
-        $head->addJs('https://code.jquery.com/jquery-3.4.1.slim.min.js');
-        $head->addJs('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js');
-        $head->addJs('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
-
-        return $head;
-    }
 
     public function getHeaderNode(): HTMLNode {
         $header = new HTMLNode('header');
@@ -340,6 +330,15 @@ class WebFioriV108 extends Theme {
         $navItemsContainer->addChild($mainLinksUl);
 
         return $header;
+    }
+    public function getHeadNode(): HeadNode {
+        $head = new HeadNode();
+        $head->addCSS('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+        $head->addJs('https://code.jquery.com/jquery-3.4.1.slim.min.js');
+        $head->addJs('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js');
+        $head->addJs('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
+
+        return $head;
     }
 }
 

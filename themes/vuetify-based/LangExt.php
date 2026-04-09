@@ -9,7 +9,7 @@ use webfiori\framework\i18n\Language;
  */
 class LangExt {
     /**
-     * 
+     *
      * @param Language $translation
      */
     public static function extendLang($translation) {
@@ -49,7 +49,7 @@ class LangExt {
                 'prev' => 'الشكل السابق'
             ]);
             $translation->createAndSet('vuetify/calendar', [
-               'moreEvents' => '{0} اكثر'
+                'moreEvents' => '{0} اكثر'
             ]);
             $translation->createAndSet('example/footer', [
                 'get-connected' => 'تواصل معنا عن طريق شبكات التواصل الإجتماعية!',
@@ -97,7 +97,7 @@ class LangExt {
                 'prev' => 'Next visual'
             ]);
             $translation->createAndSet('vuetify/calendar', [
-               'moreEvents' => '{0} more'
+                'moreEvents' => '{0} more'
             ]);
             $translation->createAndSet('example/footer', [
                 'get-connected' => 'Stay in touch with us through social media!',

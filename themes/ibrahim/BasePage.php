@@ -12,7 +12,7 @@ use webfiori\ui\JsCode;
 
 /**
  * A base page that can be extended to create system pages.
- * 
+ *
  * Used to simplfy some of the common tasks.
  *
  * @author Ibrahim
@@ -20,25 +20,25 @@ use webfiori\ui\JsCode;
 class BasePage extends WebPage {
     private $isDark;
     /**
-     * A json object that holds backend data. Used to send data to 
+     * A json object that holds backend data. Used to send data to
      * frontend.
-     * 
-     * @var Json 
+     *
+     * @var Json
      */
     private $jsonData;
     /**
      *
-     * @var JsCode 
+     * @var JsCode
      */
     private $topInlineJs;
     /**
      * Creates new instance of the class.
-     * 
-     * @param string $vueScript The path to the script which is used to initialize 
+     *
+     * @param string $vueScript The path to the script which is used to initialize
      * vue and vuetify.
-     * 
+     *
      * @param string $pageTitle The title of the page.
-     * 
+     *
      * @param string $description The description of the page.
      */
     public function __construct($vueScript = '', $pageTitle = 'Title', $description = '') {
@@ -51,7 +51,7 @@ class BasePage extends WebPage {
                 'secondary' => '#4caf50',
                 'accent' => '#795548',
                 'error' => '#f44336',
-                'warning' => '#ff9800', 
+                'warning' => '#ff9800',
                 'info' => '#607d8b',
                 'success' => '#00bcd4'
             ]),
@@ -60,7 +60,7 @@ class BasePage extends WebPage {
                 'secondary' => '#4caf50',
                 'accent' => '#795548',
                 'error' => '#f44336',
-                'warning' => '#ff9800', 
+                'warning' => '#ff9800',
                 'info' => '#607d8b',
                 'success' => '#00bcd4'
             ])
@@ -90,7 +90,7 @@ class BasePage extends WebPage {
                 ]);
 
                 $node->addChild('v-icon')
-                ->text("{{snackbars[$x].icon}}");
+                    ->text("{{snackbars[$x].icon}}");
                 $node->addChild('div', [
                     'v-html' => "snackbars[$x].statusText",
                     'style' => [
@@ -138,10 +138,10 @@ class BasePage extends WebPage {
     }
     /**
      * Adds an inline JavAscript code to the &gt;head&lt; tag of the page.
-     * 
-     * this is mainly used to initialize JavAscript variables that might be used 
+     *
+     * this is mainly used to initialize JavAscript variables that might be used
      * in front-end.
-     * 
+     *
      * @param string $code A valid JavaScript code as string.
      */
     public function addInlineJs($code) {
@@ -149,9 +149,9 @@ class BasePage extends WebPage {
     }
     /**
      * Adds a set of attributes to the json data.
-     * 
-     * @param array $arrOfAttrs An associative array. The indices of the array 
-     * are attributes names and the value of each index is the value that will 
+     *
+     * @param array $arrOfAttrs An associative array. The indices of the array
+     * are attributes names and the value of each index is the value that will
      * be passed.
      */
     public function addToJson($arrOfAttrs) {
@@ -161,16 +161,16 @@ class BasePage extends WebPage {
     }
     /**
      * Creates a v-btn element.
-     * 
+     *
      * @param array $props An associative array that holds button attributes.
-     * 
+     *
      * @param string $text An optional button text.
-     * 
-     * @param string $icon An optional icon to add to the button. The value of 
+     *
+     * @param string $icon An optional icon to add to the button. The value of
      * this argument must be of the mdi- icons set.
-     * 
+     *
      * @param array $iconProps An optional array that holds icon properties.
-     * 
+     *
      * @return HTMLNode
      */
     public function createButton($props = [], $text = null, $icon = null, $iconProps = []) {
@@ -188,13 +188,13 @@ class BasePage extends WebPage {
     }
     /**
      * Creates a basic v-data-table with the ability to search.
-     * 
+     *
      * @param string $searchLabel A string that represents search label.
-     * 
+     *
      * @param string $searchModel The name of the model that represents search value.
-     * 
+     *
      * @param array $attrs An array of attributes for the datatable.
-     * 
+     *
      * @return HTMLNode
      */
     public function createDataTable($searchLabel = 'Search', $searchModel = 'search', array $attrs = []) {
@@ -216,14 +216,14 @@ class BasePage extends WebPage {
     }
     /**
      * Creates a v-autocomplete element that represents a select.
-     * @param string $items The name of the model that represents the 
+     * @param string $items The name of the model that represents the
      * items to select from.
-     * 
+     *
      * @param string $label A label for the input element.
-     * 
-     * @param array $extraAttrs An optional array of extra attributes for 
+     *
+     * @param array $extraAttrs An optional array of extra attributes for
      * the select.
-     * 
+     *
      * @return HTMLNode
      */
     public function createSelect($items, $label, array $extraAttrs) {
@@ -239,13 +239,13 @@ class BasePage extends WebPage {
     }
     /**
      * Creates a basic date picker input element.
-     * 
-     * @param string $menuModel The name of the model which is used to 
+     *
+     * @param string $menuModel The name of the model which is used to
      * represents the menu of the input.
-     * 
-     * @param array $attrs An associative array that holds extra attributes 
+     *
+     * @param array $attrs An associative array that holds extra attributes
      * for the date picker input.
-     * 
+     *
      * @return HTMLNode
      */
     public function datePicker($menuModel = 'menu', $attrs = []) {
@@ -297,18 +297,18 @@ class BasePage extends WebPage {
     }
     /**
      * Returns an object of type Json that contains all JSON attributes.
-     * 
+     *
      * Initially, the object will contain all common attributes for all pages.
-     * 
+     *
      * @return Json
-     * 
+     *
      */
     public function getJson() {
         return $this->jsonData;
     }
     /**
      * Returns the object that holds the inline JavaScript code.
-     * 
+     *
      * @return JsCode
      */
     public function getTopInlineJs() {
@@ -319,10 +319,10 @@ class BasePage extends WebPage {
     }
     /**
      * Sets the JavaScript file which will be used to initialize vue.
-     * 
-     * @param string $jsFilePath A string that represents the path of the 
+     *
+     * @param string $jsFilePath A string that represents the path of the
      * file such as 'assets/js/init-vue.js'.
-     * 
+     *
      */
     public function setVueJs($jsFilePath) {
         $this->addBeforeRender(function (WebPage $page, $jsPath)

@@ -3,10 +3,10 @@
 use webfiori\framework\Page;
 use webfiori\framework\Theme;
 use webfiori\json\Json;
+use webfiori\theme\vutifyTheme\LangExt;
 use webfiori\ui\Anchor;
 use webfiori\ui\HeadNode;
 use webfiori\ui\HTMLNode;
-use webfiori\theme\vutifyTheme\LangExt;
 
 /**
  * A basic theme which is based on Vuetify framework.
@@ -46,7 +46,7 @@ class VuetifyTheme extends Theme {
     }
     /**
      * Creates a generic html node.
-     * The returned node will depends on the way the developer has implemented 
+     * The returned node will depends on the way the developer has implemented
      * the method.
      * @param array $options An associative array that contains options.
      * @return HTMLNode
@@ -104,15 +104,15 @@ class VuetifyTheme extends Theme {
             'class' => 'lightbox white--text pa-2 fill-height',
             'align' => 'end'
         ])->addChild('v-col')
-        ->addChild('div',['class' => 'subheading'])->text('Programming Academia')
-        ->getParent()->getParent()->getParent()->addChild('v-list', [
+            ->addChild('div',['class' => 'subheading'])->text('Programming Academia')
+            ->getParent()->getParent()->getParent()->addChild('v-list', [
             'dense','nav'
         ])->addChild('v-list-item-group', [
             'active-class' => 'deep-purple--text text--accent-4'
-            ])->addChild($this->createHTMLNode([
-        'type' => 'v-list-item',
-        'title' => Page::translation()->get('side-menu/home'),
-        'icon' => 'mdi-home'
+        ])->addChild($this->createHTMLNode([
+            'type' => 'v-list-item',
+            'title' => Page::translation()->get('side-menu/home'),
+            'icon' => 'mdi-home'
         ]))->addChild($this->createHTMLNode([
             'type' => 'v-list-item',
             'title' => Page::translation()->get('side-menu/search'),
@@ -181,32 +181,10 @@ class VuetifyTheme extends Theme {
         $vuetifyNode->addChild($vuetifyLink);
 
         $vCardText->addChild($copywriteNoticeNode, true)
-                ->addChild($poweredByNode, true)
-                ->addChild($vuetifyNode);
+            ->addChild($poweredByNode, true)
+            ->addChild($vuetifyNode);
 
         $vCard->addChild($vCardText);
-
-        return $node;
-    }
-    /**
-     * Creates and returns the head node of the web page.
-     * It simply loads all needed JavaScript, CSS and any other resources.
-     * @return HeadNode
-     */
-    public function getHeadNode() {
-        $node = new HeadNode();
-        $lang = Page::translation();
-        $json = new Json();
-        $langVars = $lang->getLanguageVars();
-
-        foreach ($langVars as $key => $val) {
-            $json->add($key, $val,['array-as-object' => true]);
-        }
-        $node->addCSS('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',[], false);
-        $node->addCSS('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css', [], false);
-        $node->addCSS('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css', [], false);
-        $node->addJs('https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js', [], false);
-        $node->addJs('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js', [], false);
 
         return $node;
     }
@@ -251,26 +229,48 @@ class VuetifyTheme extends Theme {
             'v-bind' => 'props',
             'gradient' => "to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
         ])->getParent()->getParent()
-        ->addChild($logo, true)
-        ->addChild($drawerIcon, true)
-        ->addChild($titleNode, true)
-        ->addChild('v-spacer', true)
+            ->addChild($logo, true)
+            ->addChild($drawerIcon, true)
+            ->addChild($titleNode, true)
+            ->addChild('v-spacer', true)
 
         //Add extra actions to the bar such as search
-                ->addChild($this->createHTMLNode([
-                    'type' => 'icon-button',
-                    'icon' => 'mdi-magnify'
-                ]), true)
-                ->addChild($this->createHTMLNode([
-                    'type' => 'icon-button'
-                ]), true)
-                ->addChild($this->createHTMLNode([
-                    'type' => 'icon-button',
-                    'icon' => 'mdi-heart'
-                ]));
+            ->addChild($this->createHTMLNode([
+                'type' => 'icon-button',
+                'icon' => 'mdi-magnify'
+            ]), true)
+            ->addChild($this->createHTMLNode([
+                'type' => 'icon-button'
+            ]), true)
+            ->addChild($this->createHTMLNode([
+                'type' => 'icon-button',
+                'icon' => 'mdi-heart'
+            ]));
 
         $node = new HTMLNode();
         $node->addChild($appBar);
+
+        return $node;
+    }
+    /**
+     * Creates and returns the head node of the web page.
+     * It simply loads all needed JavaScript, CSS and any other resources.
+     * @return HeadNode
+     */
+    public function getHeadNode() {
+        $node = new HeadNode();
+        $lang = Page::translation();
+        $json = new Json();
+        $langVars = $lang->getLanguageVars();
+
+        foreach ($langVars as $key => $val) {
+            $json->add($key, $val,['array-as-object' => true]);
+        }
+        $node->addCSS('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',[], false);
+        $node->addCSS('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css', [], false);
+        $node->addCSS('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css', [], false);
+        $node->addJs('https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js', [], false);
+        $node->addJs('https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js', [], false);
 
         return $node;
     }
