@@ -1,8 +1,8 @@
 /nbproject/*
-app/storage/*
 vendor/*
-app/sto
 .idea/*
 .vscode/*
 tests/.phpunit.result.cache
 */config/*
+*/Storage/*
+*.cache
