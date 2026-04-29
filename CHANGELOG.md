@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0-RC1](https://github.com/WebFiori/app/compare/v3.0.0-RC0...v3.0.0-RC1) (2026-04-29)
+
+
+### Miscellaneous Chores
+
+* Ignore lock ([c9cbefd](https://github.com/WebFiori/app/commit/c9cbefd05b1f54b0b6db62ae71134a9f3abd23f1))
+* Updated Version Number ([f989cad](https://github.com/WebFiori/app/commit/f989cad4e6c8cd8ebadf2e019271b1f54213de87))
+
 ## [3.0.0-RC0](https://github.com/WebFiori/app/compare/v3.0.0-RC0...v3.0.0-RC0) (2026-04-09)
 
 
