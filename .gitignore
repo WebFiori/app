@@ -6,3 +6,4 @@ tests/.phpunit.result.cache
 */config/*
 */Storage/*
 *.cache
+composer.lock
