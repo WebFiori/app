@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0-RC.5](https://github.com/WebFiori/app/compare/v3.0.0-RC1...v3.0.0-RC.5) (2026-05-31)
+
+
+### Miscellaneous Chores
+
+* Update composer.json ([5a510e8](https://github.com/WebFiori/app/commit/5a510e86df6da51551e758fc0df6ea0f6e3121f9))
+* Updated Verstion ([8218dbf](https://github.com/WebFiori/app/commit/8218dbfb59fdbb62f52e64ffab5a8687562a8642))
+
 ## [3.0.0-RC1](https://github.com/WebFiori/app/compare/v3.0.0-RC1...v3.0.0-RC1) (2026-04-30)
 
 
