@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.0-RC.5](https://github.com/WebFiori/app/compare/v3.0.0-RC1...v3.0.0-RC.5) (2026-06-14)
+
+
+### Miscellaneous Chores
+
+* align CI with ecosystem baseline ([2a98eaa](https://github.com/WebFiori/app/commit/2a98eaabfb5438e669b036448c4597fe98f88c39))
+* Update composer.json ([5a510e8](https://github.com/WebFiori/app/commit/5a510e86df6da51551e758fc0df6ea0f6e3121f9))
+* Updated Verstion ([8218dbf](https://github.com/WebFiori/app/commit/8218dbfb59fdbb62f52e64ffab5a8687562a8642))
+* Updated WebFiori Version ([678b98c](https://github.com/WebFiori/app/commit/678b98c0e88ab49f471dcd7b3b817e557dd86efe))
+
 ## [3.0.0-RC1](https://github.com/WebFiori/app/compare/v3.0.0-RC1...v3.0.0-RC1) (2026-04-30)
 
 
