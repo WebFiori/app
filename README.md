@@ -15,6 +15,7 @@ The default application template for [WebFiori Framework](https://github.com/Web
 ## Requirements
 
 - PHP >= 8.1
+- Extensions: `json`, `mbstring`, `fileinfo`, `openssl`
 - [Composer](https://getcomposer.org/)
 
 ## Quick Start
@@ -35,16 +36,25 @@ Then open http://localhost:8080 in your browser.
 │   ├── .htaccess       # Apache rewrite rules
 │   ├── web.config      # IIS rewrite rules
 │   └── assets/         # Static files (CSS, JS, images)
+├── App/                # Application source code
+│   ├── Apis/           # REST API services
+│   ├── Commands/       # Custom CLI commands
+│   ├── Config/         # Configuration files (auto-generated)
+│   ├── Database/       # Migrations, seeders, tables
+│   ├── Domain/         # Domain entities
+│   ├── Health/         # Health check implementations
+│   ├── Ini/            # Initialization and route definitions
+│   ├── Langs/          # Internationalization files
+│   ├── Middleware/     # Custom middleware
+│   ├── Pages/          # Page controllers and views
+│   ├── Policies/       # ABAC policy classes
+│   ├── Storage/        # Sessions, logs, uploads (not web-accessible)
+│   └── Tasks/          # Background jobs and scheduled tasks
 ├── tests/              # PHPUnit tests
-│   ├── bootstrap.php   # Test bootstrap
-│   └── phpunit.xml     # PHPUnit configuration
 ├── composer.json
-├── php_cs.php.dist     # PHP CS Fixer configuration
 ├── webfiori            # CLI entry point (Linux/macOS)
 └── webfiori.bat        # CLI entry point (Windows)
 ```
-
-After running `composer create-project`, the framework will generate an `App/` directory containing your application code (routes, middleware, commands, etc.).
 
 ## Customizing the App Directory
 
@@ -85,6 +95,20 @@ php webfiori
 
 # Windows
 webfiori.bat
+```
+
+Common commands:
+
+```bash
+php webfiori create:service       # Create a new API service
+php webfiori create:middleware    # Create a new middleware
+php webfiori create:migration    # Create a database migration
+php webfiori create:command      # Create a custom CLI command
+php webfiori migrations:run      # Run pending migrations
+php webfiori migrations:step     # Interactively apply/skip migrations
+php webfiori routes:cache        # Build route cache for production
+php webfiori services:list       # List auto-discovered API services
+php webfiori help                # Show all available commands
 ```
 
 ## Documentation
