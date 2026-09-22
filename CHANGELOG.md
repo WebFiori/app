@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/WebFiori/app/compare/v3.0.0...v3.0.1) (2026-09-22)
+
+
+### Miscellaneous Chores
+
+* **deps:** upgrade webfiori/framework to v3.1.0 ([9b3c67f](https://github.com/WebFiori/app/commit/9b3c67f993d58ef2fd9dd6e8b2549d54cdb3e543))
+
 ## [3.0.0](https://github.com/WebFiori/app/compare/v3.0.0-RC1...v3.0.0) (2026-06-14)
 
 
