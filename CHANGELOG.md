@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.1.0](https://github.com/WebFiori/app/compare/v3.0.0...v3.1.0) (2026-09-22)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump friendsofphp/php-cs-fixer from 3.95.7 to 3.95.25 ([cf49eff](https://github.com/WebFiori/app/commit/cf49eff627a9020e4ae5a0e20bba3f54ed78cea7))
+* **deps:** upgrade webfiori/framework to v3.1.0 ([9b3c67f](https://github.com/WebFiori/app/commit/9b3c67f993d58ef2fd9dd6e8b2549d54cdb3e543))
+* Merge pull request [#30](https://github.com/WebFiori/app/issues/30) from WebFiori/dev ([95bd1ef](https://github.com/WebFiori/app/commit/95bd1efdd45fd88903307d7b9ae2ecc1037488e1))
+
 ## [3.0.0](https://github.com/WebFiori/app/compare/v3.0.0-RC1...v3.0.0) (2026-06-14)
 
 
