@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.0](https://github.com/WebFiori/app/compare/v3.1.0...v3.1.0) (2026-09-24)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump friendsofphp/php-cs-fixer from 3.95.25 to 3.95.26 ([839b8ee](https://github.com/WebFiori/app/commit/839b8eebcb7953a00ee368868a00846ece1a9cc8))
+* Update composer.json ([b489dbb](https://github.com/WebFiori/app/commit/b489dbbe38528f8d4b3e600c821099d59eea4320))
+
 ## [3.1.0](https://github.com/WebFiori/app/compare/v3.0.0...v3.1.0) (2026-09-22)
 
 
